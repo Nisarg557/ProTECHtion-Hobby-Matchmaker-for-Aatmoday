@@ -1,0 +1,1107 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+
+    background: #f8f9fa;
+
+    color: #18233b;
+
+    min-height: 100vh;
+
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+
+    height: 64px;
+
+    background: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    border-bottom: 1px solid #eeeeee;
+
+}
+
+
+.nav-logo {
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    color: #d90429;
+
+    letter-spacing: -1px;
+
+}
+
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 38px;
+
+    height: 100%;
+
+}
+
+
+.nav-links a {
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    text-decoration: none;
+
+    color: #526078;
+
+    font-size: 14px;
+
+}
+
+
+.nav-links a:hover {
+
+    color: #d90429;
+
+}
+
+
+.nav-links a.active {
+
+    color: #d90429;
+
+    font-weight: 600;
+
+}
+
+
+.nav-links a.active::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    height: 3px;
+
+    background: #d90429;
+
+}
+
+
+.nav-tagline {
+
+    color: #667085;
+
+    font-size: 11px;
+
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.club-page {
+
+    max-width: 1050px;
+
+    margin: auto;
+
+    padding: 40px 25px 70px;
+
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.back-button {
+
+    display: inline-block;
+
+    margin-bottom: 25px;
+
+    color: #d90429;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.back-button:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.club-hero {
+
+    background: #ffffff;
+
+    border-top: 4px solid #d90429;
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.06);
+
+}
+
+
+.hero-main {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+
+.club-icon-large {
+
+    width: 105px;
+
+    height: 105px;
+
+    min-width: 105px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #fff0f3;
+
+    border-radius: 27px;
+
+    font-size: 55px;
+
+}
+
+
+.club-hero h1 {
+
+    font-size: 34px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.club-hero-description {
+
+    color: #667085;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    max-width: 650px;
+
+}
+
+
+/* =====================================================
+   HERO BUTTON
+===================================================== */
+
+.hero-actions {
+
+    margin-top: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #eeeeee;
+
+}
+
+
+.hero-actions p {
+
+    color: #667085;
+
+    font-size: 11px;
+
+}
+
+
+.enrol-button {
+
+    border: none;
+
+    background: #e5002b;
+
+    color: white;
+
+    padding: 12px 25px;
+
+    border-radius: 25px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+}
+
+
+.enrol-button:hover {
+
+    background: #c90026;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(229, 0, 43, 0.18);
+
+}
+
+
+/* =====================================================
+   CONTENT GRID
+===================================================== */
+
+.club-content {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 22px;
+
+    margin-top: 25px;
+
+}
+
+
+.info-card {
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    padding: 27px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.045);
+
+}
+
+
+.info-card h2 {
+
+    font-size: 17px;
+
+    margin-bottom: 14px;
+
+}
+
+
+.info-card p {
+
+    color: #667085;
+
+    font-size: 12px;
+
+    line-height: 1.75;
+
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about-card {
+
+    grid-column: 1 / -1;
+
+}
+
+
+.about-card p {
+
+    max-width: 850px;
+
+}
+
+
+/* =====================================================
+   WHAT YOU CAN DO
+===================================================== */
+
+.activities-list {
+
+    list-style: none;
+
+    margin-top: 15px;
+
+}
+
+
+.activities-list li {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 11px;
+
+    color: #526078;
+
+    font-size: 12px;
+
+}
+
+
+.activities-list li::before {
+
+    content: "✓";
+
+    width: 22px;
+
+    height: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #fff0f3;
+
+    color: #e5002b;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+/* =====================================================
+   PAST EVENTS
+===================================================== */
+
+.events-card {
+
+    grid-column: 1 / -1;
+
+}
+
+
+.event-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 15px;
+
+}
+
+
+.event-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 14px;
+
+    background: #fafafa;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 10px;
+
+}
+
+
+.event-year {
+
+    width: 58px;
+
+    min-width: 58px;
+
+    padding: 7px 5px;
+
+    text-align: center;
+
+    background: #fff0f3;
+
+    color: #d90429;
+
+    border-radius: 8px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+}
+
+
+.event-item strong {
+
+    display: block;
+
+    font-size: 12px;
+
+    margin-bottom: 3px;
+
+}
+
+
+.event-item span {
+
+    color: #8a93a3;
+
+    font-size: 10px;
+
+}
+
+
+/* =====================================================
+   UPCOMING EVENTS
+===================================================== */
+
+.upcoming-card {
+
+    border-top: 3px solid #d90429;
+
+}
+
+
+.upcoming-box {
+
+    margin-top: 16px;
+
+    padding: 22px;
+
+    background: #fff4f6;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+}
+
+
+.upcoming-icon {
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.upcoming-box strong {
+
+    display: block;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.upcoming-box p {
+
+    font-size: 10px;
+
+}
+
+
+/* =====================================================
+   WHY JOIN
+===================================================== */
+
+.why-join-card {
+
+    grid-column: 1 / -1;
+
+}
+
+
+.benefits-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-top: 18px;
+
+}
+
+
+.benefit-item {
+
+    padding: 18px;
+
+    background: #fafafa;
+
+    border-radius: 12px;
+
+}
+
+
+.benefit-icon {
+
+    font-size: 23px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.benefit-item strong {
+
+    display: block;
+
+    font-size: 11px;
+
+    margin-bottom: 4px;
+
+}
+
+
+.benefit-item p {
+
+    font-size: 10px;
+
+}
+
+
+/* =====================================================
+   BOTTOM ENROL
+===================================================== */
+
+.enrol-section {
+
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 35px;
+
+}
+
+
+.enrol-section h2 {
+
+    font-size: 21px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.enrol-section > p {
+
+    max-width: 600px;
+
+    margin: auto;
+
+}
+
+
+.bottom-enrol {
+
+    margin-top: 20px;
+
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(24, 35, 59, 0.55);
+
+    z-index: 5000;
+
+}
+
+
+.modal-overlay.show {
+
+    display: flex;
+
+}
+
+
+.enrol-modal {
+
+    width: 100%;
+
+    max-width: 480px;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    position: relative;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.2);
+
+}
+
+
+.close-modal {
+
+    position: absolute;
+
+    right: 18px;
+
+    top: 15px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #667085;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+}
+
+
+.modal-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #fff0f3;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.enrol-modal h2 {
+
+    font-size: 23px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.enrol-modal > p {
+
+    color: #667085;
+
+    font-size: 11px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.enrol-modal label {
+
+    display: block;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    margin-bottom: 6px;
+
+    margin-top: 15px;
+
+}
+
+
+.enrol-modal input,
+.enrol-modal textarea {
+
+    width: 100%;
+
+    border: 1px solid #dfe3e8;
+
+    border-radius: 9px;
+
+    padding: 12px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 11px;
+
+    outline: none;
+
+}
+
+
+.enrol-modal textarea {
+
+    min-height: 90px;
+
+    resize: vertical;
+
+}
+
+
+.enrol-modal input:focus,
+.enrol-modal textarea:focus {
+
+    border-color: #d90429;
+
+}
+
+
+.submit-enrol {
+
+    width: 100%;
+
+    margin-top: 22px;
+
+    border: none;
+
+    background: #e5002b;
+
+    color: white;
+
+    padding: 13px;
+
+    border-radius: 9px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   SUCCESS
+===================================================== */
+
+.enrol-success {
+
+    display: none;
+
+    text-align: center;
+
+}
+
+
+.success-icon {
+
+    width: 60px;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 0 auto 15px;
+
+    background: #dcf7e9;
+
+    color: #159447;
+
+    border-radius: 50%;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+}
+
+
+.enrol-success h3 {
+
+    font-size: 18px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.enrol-success p {
+
+    color: #667085;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+}
+
+
+.success-button {
+
+    margin-top: 20px;
+
+    border: none;
+
+    padding: 10px 25px;
+
+    border-radius: 22px;
+
+    background: #e5002b;
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    padding: 25px;
+
+    background: #ffffff;
+
+    border-top: 1px solid #e7e9ec;
+
+    color: #667085;
+
+    text-align: center;
+
+    font-size: 11px;
+
+}
+
+
+footer span {
+
+    margin: 0 8px;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .nav-tagline {
+
+        display: none;
+
+    }
+
+
+    .club-content {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .about-card,
+    .events-card,
+    .why-join-card,
+    .enrol-section {
+
+        grid-column: 1;
+
+    }
+
+
+    .benefits-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .nav-links {
+
+        gap: 12px;
+
+    }
+
+
+    .nav-links a {
+
+        font-size: 10px;
+
+    }
+
+
+    .club-page {
+
+        padding: 30px 15px;
+
+    }
+
+
+    .club-hero {
+
+        padding: 25px;
+
+    }
+
+
+    .hero-main {
+
+        display: block;
+
+    }
+
+
+    .club-icon-large {
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .club-hero h1 {
+
+        font-size: 27px;
+
+    }
+
+
+    .hero-actions {
+
+        display: block;
+
+    }
+
+
+    .hero-actions p {
+
+        margin-bottom: 15px;
+
+    }
+
+
+    .enrol-button {
+
+        width: 100%;
+
+    }
+
+}
