@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Aatmoday Club</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="club.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar">
+
+    <div class="nav-logo">
+        aatmoday
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="home(2).html">
+            Home
+        </a>
+
+        <a href="advisor.html">
+            Find My Match
+        </a>
+
+        <a
+            href="clubs.html"
+            class="active"
+        >
+            Clubs
+        </a>
+
+        <a href="#">
+            About
+        </a>
+
+        <a href="#">
+            Contact
+        </a>
+
+    </div>
+
+
+    <div class="nav-tagline">
+        Discover your interests. Find your community.
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="club-page">
+
+
+    <a
+        href="advisor.html"
+        class="back-button"
+    >
+        ← Back to Matches
+    </a>
+
+
+
+    <!-- =================================================
+         HERO
+    ================================================= -->
+
+    <section
+        id="clubHero"
+        class="club-hero"
+    >
+
+    </section>
+
+
+
+    <!-- =================================================
+         CLUB CONTENT
+    ================================================= -->
+
+    <section
+        id="clubContent"
+        class="club-content"
+    >
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     ENROL MODAL
+===================================================== -->
+
+<div
+    id="enrolModal"
+    class="modal-overlay"
+>
+
+
+    <div class="enrol-modal">
+
+
+        <button
+            class="close-modal"
+            onclick="closeEnrolModal()"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-icon">
+            🎯
+        </div>
+
+
+        <h2>
+            Enrol in the Club
+        </h2>
+
+
+        <p id="enrolClubName">
+            Join the Aatmoday community.
+        </p>
+
+
+        <form
+            id="enrolForm"
+            onsubmit="submitEnrollment(event)"
+        >
+
+
+            <label>
+                Your Name
+            </label>
+
+            <input
+                type="text"
+                id="studentName"
+                placeholder="Enter your name"
+                required
+            >
+
+
+
+            <label>
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="studentEmail"
+                placeholder="Enter your university email"
+                required
+            >
+
+
+
+            <label>
+                Why are you interested?
+            </label>
+
+            <textarea
+                id="enrolReason"
+                placeholder="Tell us briefly..."
+            ></textarea>
+
+
+
+            <button
+                type="submit"
+                class="submit-enrol"
+            >
+                Submit Enrolment →
+            </button>
+
+
+        </form>
+
+
+        <div
+            id="enrolSuccess"
+            class="enrol-success"
+        >
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h3>
+                Enrolment Request Received!
+            </h3>
+
+            <p>
+                Your interest has been recorded.
+                The club team can contact you with
+                further details.
+            </p>
+
+            <button
+                onclick="closeEnrolModal()"
+                class="success-button"
+            >
+                Done
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    Aatmoday — University Hobby Club Council
+
+    <span>|</span>
+
+    Discover your interests. Find your community.
+
+</footer>
+
+
+
+<script src="club.js"></script>
+
+</body>
+
+</html>
