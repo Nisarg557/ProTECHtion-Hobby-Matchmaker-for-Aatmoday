@@ -1188,7 +1188,19 @@ input::placeholder {
 }
 
 
+/* ICEBREAKER */
 
+.icebreaker {
+
+    padding: 13px;
+
+    margin-bottom: 15px;
+
+    background: #fff2f5;
+
+    border-radius: 10px;
+
+}
 
 
 /* LEARN MORE */
