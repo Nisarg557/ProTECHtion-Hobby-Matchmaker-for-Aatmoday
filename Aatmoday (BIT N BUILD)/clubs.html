@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Clubs & Organizations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="clubs.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="home.html">Home</a>
+        <a href="advisor.html">Advisor</a>
+        <a href="clubs.html" class="active">Clubs</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="header-section">
+        <h1>Discover Your Passion</h1>
+        <p>Browse our major student organizations and find where you belong. Use the search bar below to filter clubs.</p>
+        <input type="text" id="searchBar" placeholder="Search for tech, sports, arts..." onkeyup="filterClubs()">
+    </div>
+
+    <div class="clubs-container">
+        <div id="clubList">
+            
+            <div class="club-card">
+                <div class="club-icon">💻</div>
+                <h3>Computer Science & Robotics</h3>
+                <p>Build apps, program robots, and network with tech industry leaders. Perfect for tech enthusiasts, coders, and future developers.</p>
+            </div>
+            
+            <div class="club-card">
+                <div class="club-icon">🏆</div>
+                <h3>Intramural Sports Association</h3>
+                <p>Compete in soccer, basketball, volleyball, and track events all year round. Stay active, build teamwork skills, and win the campus cup.</p>
+            </div>
+            
+            <div class="club-card">
+                <div class="club-icon">🎨</div>
+                <h3>Fine Arts & Theatre Society</h3>
+                <p>Express yourself through painting, acting, and musical performances. Join us for our bi-annual campus showcase and gallery exhibitions.</p>
+            </div>
+            
+            <div class="club-card">
+                <div class="club-icon">🤝</div>
+                <h3>Volunteer & Community Action</h3>
+                <p>Give back to the local community through organized charity events, food drives, and weekend outreach programs. Make a real difference.</p>
+            </div>
+
+            <div class="club-card">
+                <div class="club-icon">📈</div>
+                <h3>Business & Finance Club</h3>
+                <p>Learn about investing, entrepreneurship, and corporate strategies. Participate in national case competitions and networking events.</p>
+            </div>
+
+            <div class="club-card">
+                <div class="club-icon">🌍</div>
+                <h3>Global Culture Exchange</h3>
+                <p>Celebrate diversity by learning about different cultures, foods, and languages from international students across the globe.</p>
+            </div>
+
+            <div id="no-results">No clubs found matching your search. Try another word!</div>
+
+        </div>
+    </div>
+
+    <script src="clubs.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Campus Life</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+    <!-- Updated Navbar -->
+    <div class="navbar">
+        <a href="home.html" class="active">Home</a>
+        <a href="advisor.html">Advisor</a>
+        <a href="clubs.html">Clubs</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="hero-section">
+        <h1>Welcome to Campus Life</h1>
+        <p>Your ultimate hub for student organizations, activities, and connections. Get involved, meet new people, and make the most out of your campus experience.</p>
+        <div class="hero-buttons">
+            <a href="clubs.html" class="btn-primary">Browse Clubs</a>
+            <a href="advisor.html" class="btn-secondary">Which club suits me?</a>
+        </div>
+    </div>
+
+    <div class="events-section">
+        <div class="events-header">
+            <h2>📅 Upcoming Events</h2>
+            <p>Don't miss out on what's happening around campus this week.</p>
+        </div>
+        
+        <!-- The JS will inject the flexbox cards into this container -->
+        <div id="events-container"></div>
+    </div>
+
+    <script src="home.js"></script>
+</body>
+</html>

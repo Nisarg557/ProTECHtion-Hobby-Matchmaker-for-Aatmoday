@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #2b2d42;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    padding-top: 80px; 
+}
+
+.navbar {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #6c757d;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: #d90429; 
+}
+
+.header-section {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header-section h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2b2d42;
+    margin-bottom: 15px;
+}
+
+.header-section p {
+    font-size: 16px;
+    color: #6c757d;
+    margin-bottom: 30px;
+}
+
+#searchBar {
+    width: 100%;
+    max-width: 500px;
+    padding: 16px 24px;
+    font-size: 16px;
+    color: #2b2d42;
+    border: 2px solid #e9ecef;
+    border-radius: 50px; 
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+#searchBar:focus {
+    border-color: #d90429;
+    box-shadow: 0 0 0 4px rgba(217, 4, 41, 0.1);
+}
+
+.clubs-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px 60px 20px;
+}
+
+#clubList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px; 
+    justify-content: center;
+}
+
+.club-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+    
+    flex: 1 1 calc(50% - 24px);
+    min-width: 320px;
+    max-width: 480px;
+    
+    display: flex;
+    flex-direction: column;
+    border-top: 6px solid #d90429;
+}
+
+.club-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.club-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.club-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2b2d42;
+    margin-bottom: 12px;
+}
+
+.club-card p {
+    font-size: 15px;
+    color: #6c757d;
+    line-height: 1.7;
+    flex-grow: 1; 
+}
+
+#no-results {
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding: 40px;
+    color: #6c757d;
+    font-size: 18px;
+}

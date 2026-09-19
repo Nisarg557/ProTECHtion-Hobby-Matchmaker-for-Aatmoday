@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #2b2d42;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    padding-top: 80px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #6c757d;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: #d90429;
+}
+
+.advisor-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.advisor-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    border-top: 6px solid #d90429;
+}
+
+.icon-header {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2b2d42;
+    margin-bottom: 10px;
+}
+
+.advisor-card > p {
+    font-size: 15px;
+    color: #6c757d;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2b2d42;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 15px;
+    color: #2b2d42;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    background-color: #fcfcfc;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23d90429%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 18px top 50%;
+    background-size: 12px auto;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #d90429;
+    box-shadow: 0 0 0 4px rgba(217, 4, 41, 0.1);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #d90429;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.submit-btn:hover {
+    background-color: #b20322;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(217, 4, 41, 0.2);
+}
+
+#resultBox {
+    display: none;
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #fef0f2;
+    border: 1px solid #fad4d9;
+    animation: fadeIn 0.4s ease;
+    text-align: left;
+}
+
+#resultBox h3 {
+    color: #d90429;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+#resultBox p {
+    font-size: 14px;
+    color: #2b2d42;
+    line-height: 1.5;
+}
+
+.loading {
+    display: block !important;
+    text-align: center !important;
+    background-color: #f8f9fa !important;
+    border: 1px dashed #ced4da !important;
+    color: #6c757d !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dynamic-section {
+    display: none;
+    border-left: 4px solid #d90429;
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    background-color: #fdf3f4;
+    padding: 15px 20px;
+    border-radius: 0 10px 10px 0;
+    animation: slideDown 0.4s ease;
+}
+
+.dynamic-section.active {
+    display: block;
+}
+
+@keyframes slideDown {
+    from { 
+        opacity: 0; 
+        transform: translateY(-10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
