@@ -1,230 +1,857 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Club Advisor - Campus Life</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="advisor.css">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Aatmoday - Find My Match</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="advisor.css"
+    >
+
 </head>
+
+
 <body>
 
-    <div class="navbar">
-        <a href="home.html">Home</a>
-        <a href="advisor.html" class="active">Advisor</a>
-        <a href="clubs.html">Clubs</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar">
+
+    <div class="nav-logo">
+        aatmoday
     </div>
 
-    <div class="advisor-wrapper">
-        <div class="advisor-card">
-            <div class="icon-header">🎯</div>
-            <h1>Club Matchmaker</h1>
-            <p>Answer these questions and our system will analyze your deep preferences to suggest the perfect campus organization.</p>
 
-            <form id="advisorForm" onsubmit="event.preventDefault(); processForm();">
-                
-                <div class="form-group">
-                    <label for="userName">1. What is your name?</label>
-                    <input type="text" id="userName" placeholder="e.g., Alex" required>
-                </div>
+    <div class="nav-links">
 
-                <div class="form-group">
-                    <label for="interest">2. What is your primary interest?</label>
-                    <select id="interest" onchange="showFollowUpQuestions()" required>
-                        <option value="">-- Select an Option --</option>
-                        <option value="tech">Technology & Coding</option>
-                        <option value="sports">Athletics & Fitness</option>
-                        <option value="arts">Creative Arts</option>
-                        <option value="social">Helping Others / Social Impact</option>
-                        <option value="business">Business & Finance</option>
-                    </select>
-                </div>
+        <a href="home(2).html">
+            Home
+        </a>
 
-                <div id="tech-section" class="dynamic-section">
-                    <div class="form-group">
-                        <label for="techFocus">3. What area of tech excites you most?</label>
-                        <select id="techFocus">
-                            <option value="software">Software & App Development</option>
-                            <option value="hardware">Hardware & Robotics</option>
-                            <option value="data">AI & Data Science</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="techLevel">4. What is your current skill level?</label>
-                        <select id="techLevel">
-                            <option value="beginner">Beginner / Just learning</option>
-                            <option value="intermediate">Intermediate / Can build basic things</option>
-                            <option value="advanced">Advanced / Ready for complex projects</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="techStyle">5. How do you prefer to work?</label>
-                        <select id="techStyle">
-                            <option value="solo">Solo coding in my zone</option>
-                            <option value="pair">Pair programming with a partner</option>
-                            <option value="team">Large collaborative team projects</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="techGoal">6. What is your ultimate career goal?</label>
-                        <select id="techGoal">
-                            <option value="faang">Working at Big Tech (Google, Microsoft)</option>
-                            <option value="startup">Building a fast-paced Startup</option>
-                            <option value="research">Academic Research & Development</option>
-                        </select>
-                    </div>
-                </div>
+        <a
+            href="advisor.html"
+            class="active"
+        >
+            Find My Match
+        </a>
 
-                <div id="sports-section" class="dynamic-section">
-                    <div class="form-group">
-                        <label for="sportsFocus">3. How do you prefer to stay active?</label>
-                        <select id="sportsFocus">
-                            <option value="team">Team Sports (Soccer, Basketball)</option>
-                            <option value="individual">Individual Fitness (Running, Lifting)</option>
-                            <option value="outdoor">Outdoor Adventure (Hiking, Climbing)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="sportsIntensity">4. How competitive are you?</label>
-                        <select id="sportsIntensity">
-                            <option value="casual">Just for fun and socializing</option>
-                            <option value="amateur">I like a good, structured challenge</option>
-                            <option value="hardcore">I play to win championships</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="sportsTime">5. How much time can you commit?</label>
-                        <select id="sportsTime">
-                            <option value="low">1-2 hours a week</option>
-                            <option value="medium">3-5 hours a week</option>
-                            <option value="high">I want to train almost every day</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="sportsSchedule">6. When do you prefer to work out?</label>
-                        <select id="sportsSchedule">
-                            <option value="morning">Early bird mornings</option>
-                            <option value="afternoon">Between afternoon classes</option>
-                            <option value="night">Late night sessions</option>
-                        </select>
-                    </div>
-                </div>
+        <a href="clubs.html">
+            Clubs
+        </a>
 
-                <div id="arts-section" class="dynamic-section">
-                    <div class="form-group">
-                        <label for="artsFocus">3. What is your preferred creative medium?</label>
-                        <select id="artsFocus">
-                            <option value="performing">Performing Arts (Acting, Dance)</option>
-                            <option value="visual">Visual Arts (Painting, Design)</option>
-                            <option value="music">Music & Audio Production</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="artsVibe">4. What is your artistic style?</label>
-                        <select id="artsVibe">
-                            <option value="traditional">Classical & Traditional</option>
-                            <option value="modern">Modern & Experimental</option>
-                            <option value="pop">Pop Culture & Mainstream</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="artsGoal">5. Why do you create art?</label>
-                        <select id="artsGoal">
-                            <option value="hobby">Stress relief and personal hobby</option>
-                            <option value="portfolio">Building a professional portfolio</option>
-                            <option value="audience">I want to perform for big audiences</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="artsCollab">6. How do you like to create?</label>
-                        <select id="artsCollab">
-                            <option value="solo">As a solo artist</option>
-                            <option value="small">In small, intimate groups</option>
-                            <option value="large">Huge ensemble productions</option>
-                        </select>
-                    </div>
-                </div>
+        <a href="#">
+            About
+        </a>
 
-                <div id="social-section" class="dynamic-section">
-                    <div class="form-group">
-                        <label for="socialFocus">3. Where do you want to make an impact?</label>
-                        <select id="socialFocus">
-                            <option value="local">Local Campus & City Community</option>
-                            <option value="global">Global Human Rights / Charities</option>
-                            <option value="environment">Environmental Conservation</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="socialRole">4. What role fits you best?</label>
-                        <select id="socialRole">
-                            <option value="handsOn">Hands-on volunteering on the ground</option>
-                            <option value="logistics">Organizing events and logistics</option>
-                            <option value="marketing">Fundraising and marketing campaigns</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="socialInteract">5. Who do you want to work with?</label>
-                        <select id="socialInteract">
-                            <option value="kids">Tutoring / Mentoring kids</option>
-                            <option value="peers">Working with fellow college students</option>
-                            <option value="behind">Behind the scenes (Data, Planning)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="socialTime">6. When are you most available?</label>
-                        <select id="socialTime">
-                            <option value="weekends">Weekend mornings</option>
-                            <option value="evenings">Weekday evenings</option>
-                            <option value="breaks">During winter/spring breaks</option>
-                        </select>
-                    </div>
-                </div>
+        <a href="#">
+            Contact
+        </a>
 
-                <div id="business-section" class="dynamic-section">
-                    <div class="form-group">
-                        <label for="businessFocus">3. What is your main interest?</label>
-                        <select id="businessFocus">
-                            <option value="startup">Entrepreneurship & Startups</option>
-                            <option value="finance">Investing & Corporate Finance</option>
-                            <option value="marketing">Marketing & Brand Strategy</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="businessRisk">4. What is your risk tolerance?</label>
-                        <select id="businessRisk">
-                            <option value="high">High Risk / High Reward</option>
-                            <option value="calculated">Calculated, data-driven risks</option>
-                            <option value="safe">Steady, safe, and reliable</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="businessEnv">5. What environment suits you?</label>
-                        <select id="businessEnv">
-                            <option value="formal">Corporate and formal (Suits & Ties)</option>
-                            <option value="casual">Casual startup culture (Hoodies & Coffee)</option>
-                            <option value="solo">Freelance and independent</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="businessSkill">6. What is your secret superpower?</label>
-                        <select id="businessSkill">
-                            <option value="numbers">Crunching numbers and analytics</option>
-                            <option value="people">Networking and charming people</option>
-                            <option value="creative">Coming up with out-of-the-box strategies</option>
-                        </select>
-                    </div>
-                </div>
+    </div>
 
-                <button type="submit" class="submit-btn" id="submitBtn" style="display:none;">Analyze My Deep Profile</button>
-            </form>
 
-            <div id="resultBox"></div>
+    <div class="nav-tagline">
+        Discover your interests. Find your community.
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     MAIN FORM AREA
+===================================================== -->
+
+<main class="page-wrapper">
+
+
+    <!-- LEFT SIDE -->
+
+    <aside class="side-panel left-panel">
+
+        <h2>
+            Discover.<br>
+            <span>Connect.</span><br>
+            Belong.
+        </h2>
+
+
+        <div class="red-line"></div>
+
+
+        <p>
+            Aatmoday brings students together through
+            hobbies, creativity and meaningful experiences.
+        </p>
+
+
+        <div class="side-quote">
+
+            More than clubs,<br>
+            it's a community.
 
         </div>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         FORM
+    ================================================= -->
+
+    <section class="form-container">
+
+
+        <!-- FORM HEADER -->
+
+        <div class="form-heading">
+
+            <div>
+
+                <h1>
+                    ✨ Tell us about yourself
+                </h1>
+
+                <p>
+                    Help us understand you better so we can suggest
+                    the most relevant Aatmoday clubs and events.
+                </p>
+
+            </div>
+
+
+            <div class="heading-badge">
+
+                🎯
+
+                <span>
+                    A few quick details<br>
+                    lead to better matches!
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             QUESTION 1
+        ================================================= -->
+
+        <div class="question full-width">
+
+            <label>
+                1. What are you interested in?
+                <span>*</span>
+            </label>
+
+
+            <textarea
+                id="interestInput"
+                placeholder="E.g. I love taking photographs, exploring new places, creating creative content and meeting new people. I also enjoy learning new things."
+            ></textarea>
+
+        </div>
+
+
+
+        <!-- =================================================
+             QUESTIONS GRID
+        ================================================= -->
+
+        <div class="question-grid">
+
+
+            <!-- QUESTION 2 -->
+
+            <div class="question">
+
+                <label>
+                    2. Which of these best describes you?
+                    <span>*</span>
+                </label>
+
+
+                <div class="option-grid two-columns">
+
+
+                    <button
+                        type="button"
+                        class="option"
+                        data-group="aboutYou"
+                        data-value="new"
+                        onclick="selectOption(this, 'aboutYou')"
+                    >
+
+                        <span class="option-icon">
+                            🎓
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                New to Aatmoday
+                            </strong>
+
+                            <small>
+                                Looking to explore
+                            </small>
+
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="option"
+                        data-group="aboutYou"
+                        data-value="friends"
+                        onclick="selectOption(this, 'aboutYou')"
+                    >
+
+                        <span class="option-icon">
+                            👥
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                Make new friends
+                            </strong>
+
+                            <small>
+                                Meet like-minded students
+                            </small>
+
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="option"
+                        data-group="aboutYou"
+                        data-value="learning"
+                        onclick="selectOption(this, 'aboutYou')"
+                    >
+
+                        <span class="option-icon">
+                            💡
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                Learn a new skill
+                            </strong>
+
+                            <small>
+                                Grow and experiment
+                            </small>
+
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="option"
+                        data-group="aboutYou"
+                        data-value="passions"
+                        onclick="selectOption(this, 'aboutYou')"
+                    >
+
+                        <span class="option-icon">
+                            🚀
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                Explore existing passions
+                            </strong>
+
+                            <small>
+                                Go deeper into hobbies
+                            </small>
+
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- QUESTION 3 -->
+
+            <div class="question">
+
+                <label>
+                    3. How much time can you usually give?
+                    <span>*</span>
+                </label>
+
+
+                <div class="option-grid three-columns">
+
+
+                    <button
+                        type="button"
+                        class="option compact"
+                        data-group="time"
+                        data-value="few"
+                        onclick="selectOption(this, 'time')"
+                    >
+
+                        <span class="option-icon">
+                            🕐
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                A few hours
+                            </strong>
+
+                            <small>
+                                per week
+                            </small>
+
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="option compact"
+                        data-group="time"
+                        data-value="occasional"
+                        onclick="selectOption(this, 'time')"
+                    >
+
+                        <span class="option-icon">
+                            📅
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                Occasional
+                            </strong>
+
+                            <small>
+                                when possible
+                            </small>
+
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="option compact"
+                        data-group="time"
+                        data-value="active"
+                        onclick="selectOption(this, 'time')"
+                    >
+
+                        <span class="option-icon">
+                            ⚡
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                Very active
+                            </strong>
+
+                            <small>
+                                Can commit
+                            </small>
+
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- QUESTION 4 -->
+
+            <div class="question">
+
+                <label>
+                    4. How do you prefer working on your interests?
+                    <span>*</span>
+                </label>
+
+
+                <div class="option-grid three-columns">
+
+
+                    <button
+                        type="button"
+                        class="option compact"
+                        data-group="social"
+                        data-value="alone"
+                        onclick="selectOption(this, 'social')"
+                    >
+
+                        <span class="option-icon">
+                            👤
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                Alone
+                            </strong>
+
+                            <small>
+                                Independent
+                            </small>
+
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="option compact"
+                        data-group="social"
+                        data-value="small"
+                        onclick="selectOption(this, 'social')"
+                    >
+
+                        <span class="option-icon">
+                            👥
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                Small groups
+                            </strong>
+
+                            <small>
+                                Close collaboration
+                            </small>
+
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="option compact"
+                        data-group="social"
+                        data-value="large"
+                        onclick="selectOption(this, 'social')"
+                    >
+
+                        <span class="option-icon">
+                            👨‍👩‍👧‍👦
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                Larger groups
+                            </strong>
+
+                            <small>
+                                Social activities
+                            </small>
+
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- QUESTION 5 -->
+
+            <div class="question">
+
+                <label>
+
+                    5. What do you hope to get from joining a club?
+
+                    <small>
+                        (Select up to 3)
+                    </small>
+
+                </label>
+
+
+                <div class="goal-options">
+
+
+                    <button
+                        type="button"
+                        class="goal"
+                        data-goal="skills"
+                        onclick="toggleGoal(this)"
+                    >
+                        Learn new skills
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="goal"
+                        data-goal="people"
+                        onclick="toggleGoal(this)"
+                    >
+                        Meet new people
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="goal"
+                        data-goal="portfolio"
+                        onclick="toggleGoal(this)"
+                    >
+                        Build my portfolio
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="goal"
+                        data-goal="events"
+                        onclick="toggleGoal(this)"
+                    >
+                        Participate in events
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="goal"
+                        data-goal="break"
+                        onclick="toggleGoal(this)"
+                    >
+                        Take a break from academics
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="goal"
+                        data-goal="hobbies"
+                        onclick="toggleGoal(this)"
+                    >
+                        Explore hobbies
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- QUESTION 6 -->
+
+        <div class="question full-width additional-question">
+
+            <label>
+
+                6. Any additional interests?
+
+                <small>
+                    (Optional)
+                </small>
+
+            </label>
+
+
+            <input
+                type="text"
+                id="additionalInterests"
+                placeholder="E.g. music, travel, public speaking, volunteering, etc."
+            >
+
+        </div>
+
+
+
+        <!-- SUBMIT -->
+
+        <button
+            class="match-button"
+            onclick="findMatches()"
+        >
+
+            ✨ Find My Aatmoday Matches
+
+            <span>
+                →
+            </span>
+
+        </button>
+
+
+
+        <!-- LOADING -->
+
+        <div
+            id="loadingBox"
+            class="loading-box"
+        >
+
+            <div class="spinner"></div>
+
+            <p>
+                Understanding your interests and finding
+                relevant Aatmoday communities...
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         RIGHT SIDE
+    ================================================= -->
+
+    <aside class="side-panel right-panel">
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon people">
+                👥
+            </div>
+
+            <div>
+
+                <strong>
+                    Real Communities
+                </strong>
+
+                <p>
+                    Find people who share your interests.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon experiences">
+                ⚡
+            </div>
+
+            <div>
+
+                <strong>
+                    Meaningful Experiences
+                </strong>
+
+                <p>
+                    Workshops, events and collaborations.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="benefit">
+
+            <div class="benefit-icon growth">
+                ⭐
+            </div>
+
+            <div>
+
+                <strong>
+                    Personal Growth
+                </strong>
+
+                <p>
+                    Develop new skills and discover yourself.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="right-quote">
+
+            Your interests<br>
+
+            <span>
+                matter here.
+            </span>
+
+        </div>
+
+    </aside>
+
+</main>
+
+
+
+<!-- =====================================================
+     RESULTS
+===================================================== -->
+
+<section
+    id="resultsSection"
+    class="results-section"
+>
+
+    <div class="results-inner">
+
+
+        <!-- RESULTS HEADER -->
+
+        <div class="results-title">
+
+            <span>
+                🎯
+            </span>
+
+            <div>
+
+                <h2>
+                    Your Aatmoday Matches
+                </h2>
+
+                <p id="resultsSummary">
+                    These recommendations are based on your
+                    interests, preferences and goals.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- INTEREST PROFILE -->
+
+        <div
+            id="interestProfile"
+            class="interest-profile"
+        >
+
+        </div>
+
+
+
+        <!-- CLUB RESULTS -->
+
+        <div
+            id="resultsContainer"
+            class="results-container"
+        >
+
+        </div>
+
+
+
+        <!-- BROWSE BUTTON -->
+
+        <div class="browse-wrapper">
+
+            <a
+                href="clubs.html"
+                class="browse-button"
+            >
+
+                Browse All Clubs
+
+                <span>
+                    →
+                </span>
+
+            </a>
+
+        </div>
+
     </div>
 
-    <script src="advisor.js"></script>
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    Aatmoday — University Hobby Club Council
+
+    <span>
+        |
+    </span>
+
+    Discover your interests. Find your community.
+
+</footer>
+
+
+
+<script src="advisor.js"></script>
+
 </body>
+
 </html>
