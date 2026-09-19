@@ -1,0 +1,110 @@
+[
+  {
+    "eventName": "Fall Coding Hackathon",
+    "clubName": "Coding & Robotics Club",
+    "date": "Oct 12",
+    "time": "9:00 AM",
+    "venue": "Tech Center",
+    "status": "Upcoming",
+    "description": "Join us for our biggest 48-hour coding marathon of the year! Whether you are a beginner looking to build your first web app or an experienced developer ready to tackle complex algorithms, this hackathon is for you. We will have mentors from top tech companies and a grand prize pool of $5,000. Food and energy drinks provided."
+  },
+  {
+    "eventName": "Robo Rumbles",
+    "clubName": "Coding & Robotics Club",
+    "date": "Oct 19",
+    "time": "2:00 PM",
+    "venue": "Engineering Quad",
+    "status": "Past",
+    "description": "An intense arena battle where student-built robots faced off in a test of engineering and programming. Teams utilized Arduino and custom 3D-printed chassis to compete in obstacle courses and combat brackets."
+  },
+  {
+    "eventName": "Dussehra Fest",
+    "clubName": "Cultural Club",
+    "date": "Oct 15",
+    "time": "6:00 PM",
+    "venue": "Main Field",
+    "status": "Upcoming",
+    "description": "Celebrate the triumph of good over evil with the Cultural Club. The evening will feature a dramatic theatrical performance of the Ramayana, live classical music, traditional dance showcases, and ethnic food stalls."
+  },
+  {
+    "eventName": "Janmashtami Mahotsava",
+    "clubName": "Cultural Club",
+    "date": "Sep 08",
+    "time": "4:00 PM",
+    "venue": "Student Union",
+    "status": "Past",
+    "description": "A vibrant celebration featuring Dahi Handi competitions, traditional Garba dancing, and musical performances that brought the entire campus together to celebrate cultural heritage."
+  },
+  {
+    "eventName": "Akalpit — The Literary Fest",
+    "clubName": "Literary Club",
+    "date": "Nov 05",
+    "time": "10:00 AM",
+    "venue": "Central Library",
+    "status": "Upcoming",
+    "description": "Akalpit is our flagship multi-day literary festival. It includes slam poetry, creative writing workshops by published authors, panel discussions on contemporary literature, and an open-mic night."
+  },
+  {
+    "eventName": "Debate Competition",
+    "clubName": "Literary Club",
+    "date": "Aug 15",
+    "time": "11:00 AM",
+    "venue": "Auditorium",
+    "status": "Past",
+    "description": "A rigorous parliamentary-style debate tournament where students argued complex socio-economic topics. Judged by faculty members from the Humanities department."
+  },
+  {
+    "eventName": "Campus Yoga Activity",
+    "clubName": "Fitness Club",
+    "date": "Oct 20",
+    "time": "7:00 AM",
+    "venue": "Campus Lawns",
+    "status": "Upcoming",
+    "description": "Start your morning right with a guided 60-minute Vinyasa yoga flow. Designed for all experience levels to promote mindfulness, flexibility, and physical wellness before classes begin. Yoga mats are provided."
+  },
+  {
+    "eventName": "International Food Fest",
+    "clubName": "Cooking Club",
+    "date": "Nov 02",
+    "time": "12:00 PM",
+    "venue": "Main Courtyard",
+    "status": "Upcoming",
+    "description": "Taste authentic dishes from over 20 different countries prepared entirely by student members of the Cooking Club. A culinary journey exploring global flavors, spices, and cooking techniques."
+  },
+  {
+    "eventName": "Flameless Cooking Competition",
+    "clubName": "Cooking Club",
+    "date": "Aug 25",
+    "time": "3:00 PM",
+    "venue": "Student Lounge",
+    "status": "Past",
+    "description": "Students showcased their culinary creativity without the use of stoves or ovens, crafting intricate desserts, salads, and sandwiches under a strict time limit."
+  },
+  {
+    "eventName": "Re-Planting Activity",
+    "clubName": "Gardening Club",
+    "date": "Oct 28",
+    "time": "9:00 AM",
+    "venue": "North Campus Gardens",
+    "status": "Upcoming",
+    "description": "Connect with nature and help us build a greener campus. Volunteers will be planting native flora, setting up organic compost bins, and learning sustainable urban gardening techniques."
+  },
+  {
+    "eventName": "Visual Storytelling Workshop",
+    "clubName": "Photography Club",
+    "date": "Oct 30",
+    "time": "4:00 PM",
+    "venue": "Media Lab",
+    "status": "Upcoming",
+    "description": "Learn how to capture compelling narratives through your lens. This workshop covers framing, lighting, and Adobe Lightroom editing basics for aspiring photojournalists and creative photographers."
+  },
+  {
+    "eventName": "Documentary Competition",
+    "clubName": "Photography Club",
+    "date": "Sep 22",
+    "time": "5:00 PM",
+    "venue": "Screening Room",
+    "status": "Past",
+    "description": "A showcase of short visual documentaries created by students highlighting unseen stories around the city. The winning documentary focused on the lives of local street food vendors."
+  }
+]
