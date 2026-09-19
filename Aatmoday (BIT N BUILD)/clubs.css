@@ -1,0 +1,92 @@
+/* =========================================
+   clubs.css (For the ALL CLUBS Directory)
+========================================= */
+:root {
+    --brand-red: #d90429;
+    --brand-red-hover: #b20322;
+    --bg-main: #f9fafb;
+    --text-dark: #111827;
+    --text-muted: #6b7280;
+    --card-bg: #ffffff;
+    --border-soft: #f3f4f6;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    font-family: 'Inter', -apple-system, sans-serif;
+    min-height: 100vh;
+    padding-top: 90px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Shared Navbar --- */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 5%; position: fixed; top: 0; left: 0; width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,0.05); z-index: 1000;
+}
+.nav-logo { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; color: var(--text-dark); text-decoration: none; }
+.nav-logo .dot { color: var(--brand-red); }
+.nav-links { display: flex; gap: 32px; }
+.nav-links a {
+    text-decoration: none; color: var(--text-muted); font-weight: 600;
+    font-size: 15px; position: relative; padding: 5px 0; transition: color 0.3s ease;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--text-dark); }
+.nav-links a::after {
+    content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px;
+    background-color: var(--brand-red); transition: all 0.3s ease;
+    transform: translateX(-50%); border-radius: 2px;
+}
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+/* --- Directory Layout --- */
+.directory-header {
+    text-align: center; padding: 60px 20px 40px; max-width: 800px; margin: 0 auto;
+}
+.directory-header h1 { font-size: 42px; font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; }
+.gradient-text {
+    background: linear-gradient(135deg, var(--brand-red), #ff4d6d);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.directory-header p { font-size: 16px; color: var(--text-muted); line-height: 1.6; }
+
+.clubs-container { max-width: 1200px; margin: 0 auto; padding: 0 20px 80px; }
+.clubs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+/* --- Club Cards --- */
+.club-card {
+    background: var(--card-bg); border-radius: 16px; padding: 30px;
+    border: 1px solid var(--border-soft); display: flex; flex-direction: column;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02); transition: all 0.3s ease;
+}
+.club-card:hover {
+    transform: translateY(-6px); box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.08);
+    border-color: #e5e7eb;
+}
+.card-icon {
+    width: 64px; height: 64px; background: #fff0f2; border-radius: 16px;
+    display: flex; align-items: center; justify-content: center; font-size: 32px; margin-bottom: 20px;
+}
+.club-card h3 { font-size: 20px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+.club-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px; flex-grow: 1; }
+
+.btn-outline {
+    text-decoration: none; padding: 12px 24px; font-size: 14px; font-weight: 600;
+    border-radius: 8px; text-align: center; background-color: transparent;
+    color: var(--text-dark); border: 1px solid #e5e7eb; transition: all 0.2s ease;
+    display: block; width: 100%;
+}
+.btn-outline:hover { background-color: var(--brand-red); border-color: var(--brand-red); color: white; }
+
+.animate-fade-up { animation: fadeUp 0.6s ease forwards; opacity: 0; transform: translateY(20px); }
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }

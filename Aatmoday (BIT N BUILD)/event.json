@@ -1,110 +1,877 @@
 [
   {
-    "eventName": "Fall Coding Hackathon",
-    "clubName": "Coding & Robotics Club",
-    "date": "Oct 12",
-    "time": "9:00 AM",
-    "venue": "Tech Center",
+    "eventName": "Acoustic Night Under the Stars",
+    "clubName": "Music & Acoustics Club",
+    "date": "Nov 10, 2026",
+    "time": "7:00 PM",
+    "venue": "Amphitheater",
     "status": "Upcoming",
-    "description": "Join us for our biggest 48-hour coding marathon of the year! Whether you are a beginner looking to build your first web app or an experienced developer ready to tackle complex algorithms, this hackathon is for you. We will have mentors from top tech companies and a grand prize pool of $5,000. Food and energy drinks provided."
+    "description": "Bring your blankets and enjoy an evening of unplugged music featuring student bands, solo vocalists, and acoustic guitar performances."
   },
   {
-    "eventName": "Robo Rumbles",
-    "clubName": "Coding & Robotics Club",
-    "date": "Oct 19",
-    "time": "2:00 PM",
-    "venue": "Engineering Quad",
-    "status": "Past",
-    "description": "An intense arena battle where student-built robots faced off in a test of engineering and programming. Teams utilized Arduino and custom 3D-printed chassis to compete in obstacle courses and combat brackets."
-  },
-  {
-    "eventName": "Dussehra Fest",
-    "clubName": "Cultural Club",
-    "date": "Oct 15",
+    "eventName": "Jazz & Blues Jam Session",
+    "clubName": "Music & Acoustics Club",
+    "date": "Oct 06, 2026",
     "time": "6:00 PM",
-    "venue": "Main Field",
+    "venue": "Student Lounge",
     "status": "Upcoming",
-    "description": "Celebrate the triumph of good over evil with the Cultural Club. The evening will feature a dramatic theatrical performance of the Ramayana, live classical music, traditional dance showcases, and ethnic food stalls."
+    "description": "An open jam session dedicated to smooth jazz melodies and blues improvisation."
   },
   {
-    "eventName": "Janmashtami Mahotsava",
-    "clubName": "Cultural Club",
-    "date": "Sep 08",
+    "eventName": "Electronic Music Production Masterclass",
+    "clubName": "Music & Acoustics Club",
+    "date": "Nov 22, 2026",
     "time": "4:00 PM",
-    "venue": "Student Union",
-    "status": "Past",
-    "description": "A vibrant celebration featuring Dahi Handi competitions, traditional Garba dancing, and musical performances that brought the entire campus together to celebrate cultural heritage."
-  },
-  {
-    "eventName": "Akalpit — The Literary Fest",
-    "clubName": "Literary Club",
-    "date": "Nov 05",
-    "time": "10:00 AM",
-    "venue": "Central Library",
+    "venue": "Sound Lab",
     "status": "Upcoming",
-    "description": "Akalpit is our flagship multi-day literary festival. It includes slam poetry, creative writing workshops by published authors, panel discussions on contemporary literature, and an open-mic night."
+    "description": "Learn the fundamentals of synth programming, mixing, and beat creation using digital audio workstations."
   },
   {
-    "eventName": "Debate Competition",
-    "clubName": "Literary Club",
-    "date": "Aug 15",
+    "eventName": "Winter Solstice Concert",
+    "clubName": "Music & Acoustics Club",
+    "date": "Dec 18, 2026",
+    "time": "6:30 PM",
+    "venue": "Main Auditorium",
+    "status": "Upcoming",
+    "description": "Our grand end-of-semester showcase featuring live orchestral arrangements and choral performances."
+  },
+  {
+    "eventName": "Battle of the Bands",
+    "clubName": "Music & Acoustics Club",
+    "date": "Aug 30, 2026",
+    "time": "5:00 PM",
+    "venue": "Main Auditorium",
+    "status": "Past",
+    "description": "Five student bands competed for the ultimate title. An electrifying night of rock, pop, and indie music."
+  },
+  {
+    "eventName": "Classical Instrumental Jam",
+    "clubName": "Music & Acoustics Club",
+    "date": "Feb 18, 2026",
+    "time": "5:00 PM",
+    "venue": "Music Room 2",
+    "status": "Past",
+    "description": "An afternoon dedicated to traditional sitar, flute, and tabla renditions."
+  },
+  {
+    "eventName": "Vocal Pitch & Harmony Workshop",
+    "clubName": "Music & Acoustics Club",
+    "date": "Mar 25, 2026",
+    "time": "4:30 PM",
+    "venue": "Studio B",
+    "status": "Past",
+    "description": "Trained members on vocal breathing techniques, range expansion, and multi-part harmonies."
+  },
+  {
+    "eventName": "Lo-Fi Beats Production Session",
+    "clubName": "Music & Acoustics Club",
+    "date": "May 12, 2026",
+    "time": "3:00 PM",
+    "venue": "Audio Lab",
+    "status": "Past",
+    "description": "Students collaborated to produce chill lo-fi tracks sampled from vinyl records."
+  },
+
+  {
+    "eventName": "Canvas Painting Workshop",
+    "clubName": "Art & Design Club",
+    "date": "Oct 25, 2026",
+    "time": "3:00 PM",
+    "venue": "Design Studio",
+    "status": "Upcoming",
+    "description": "Learn the basics of acrylic pouring and canvas texturing. All art supplies including canvases, paints, and brushes will be provided."
+  },
+  {
+    "eventName": "3D Modeling & Blender Intro",
+    "clubName": "Art & Design Club",
+    "date": "Oct 12, 2026",
+    "time": "2:00 PM",
+    "venue": "Computer Lab 1",
+    "status": "Upcoming",
+    "description": "An entry-level session covering 3D mesh manipulation, textures, and lighting effects in Blender."
+  },
+  {
+    "eventName": "Typography & Branding Sprint",
+    "clubName": "Art & Design Club",
+    "date": "Nov 14, 2026",
+    "time": "10:00 AM",
+    "venue": "Design Studio",
+    "status": "Upcoming",
+    "description": "Design custom visual identities and brand logos from scratch under a timed creative challenge."
+  },
+  {
+    "eventName": "Annual Art & Design Showcase",
+    "clubName": "Art & Design Club",
+    "date": "Dec 10, 2026",
+    "time": "11:00 PM",
+    "venue": "Campus Gallery",
+    "status": "Upcoming",
+    "description": "Exhibition celebrating the best digital illustrations, paintings, and UI designs created by student members."
+  },
+  {
+    "eventName": "UI/UX Designathon",
+    "clubName": "Art & Design Club",
+    "date": "Sep 15, 2026",
+    "time": "9:00 AM",
+    "venue": "Computer Lab 3",
+    "status": "Past",
+    "description": "A 12-hour design sprint where teams redesigned popular local apps to improve user experience and accessibility."
+  },
+  {
+    "eventName": "Charcoal Sketching Masterclass",
+    "clubName": "Art & Design Club",
+    "date": "Feb 20, 2026",
+    "time": "2:00 PM",
+    "venue": "Art Studio",
+    "status": "Past",
+    "description": "Explored shadow depth, smudging techniques, and portrait proportion using compressed charcoal."
+  },
+  {
+    "eventName": "Digital Illustration Workshop",
+    "clubName": "Art & Design Club",
+    "date": "Apr 05, 2026",
+    "time": "3:30 PM",
+    "venue": "Media Lab",
+    "status": "Past",
+    "description": "Mastered vector art creation and custom brush settings using drawing tablets."
+  },
+  {
+    "eventName": "Campus Mural Painting Project",
+    "clubName": "Art & Design Club",
+    "date": "May 25, 2026",
+    "time": "9:00 AM",
+    "venue": "Student Center Wall",
+    "status": "Past",
+    "description": "Club members teamed up to paint a vibrant community mural depicting campus life."
+  },
+
+  {
+    "eventName": "Stargazing & Astrophotography",
+    "clubName": "Astronomy & Space Club",
+    "date": "Nov 15, 2026",
+    "time": "10:00 PM",
+    "venue": "Rooftop Observatory",
+    "status": "Upcoming",
+    "description": "Join us for the Leonid meteor shower peak. We will have high-powered telescopes set up and tutorials on how to capture the night sky with your DSLR."
+  },
+  {
+    "eventName": "Meteor Shower Watch Party",
+    "clubName": "Astronomy & Space Club",
+    "date": "Oct 21, 2026",
+    "time": "11:00 PM",
+    "venue": "Sports Ground",
+    "status": "Upcoming",
+    "description": "A late-night gathering to observe celestial shooting stars while discussing orbital mechanics."
+  },
+  {
+    "eventName": "Exoplanet Discovery Seminar",
+    "clubName": "Astronomy & Space Club",
+    "date": "Nov 28, 2026",
+    "time": "5:00 PM",
+    "venue": "Physics Auditorium",
+    "status": "Upcoming",
+    "description": "A deep dive into how scientists detect distant worlds orbiting faraway stars."
+  },
+  {
+    "eventName": "Deep Space Night Observation",
+    "clubName": "Astronomy & Space Club",
+    "date": "Dec 14, 2026",
+    "time": "9:00 PM",
+    "venue": "Rooftop Observatory",
+    "status": "Upcoming",
+    "description": "Clear-sky viewing session focused on tracking planetary rings, nebulae, and distant star clusters."
+  },
+  {
+    "eventName": "Solar Eclipse Viewing Event",
+    "clubName": "Astronomy & Space Club",
+    "date": "Apr 08, 2026",
+    "time": "10:00 AM",
+    "venue": "Main Lawn",
+    "status": "Past",
+    "description": "Provided specialized solar filter glasses and telescopes for safe public viewing of the solar alignment."
+  },
+  {
+    "eventName": "Astrophysics Guest Lecture Series",
+    "clubName": "Astronomy & Space Club",
+    "date": "Mar 02, 2026",
+    "time": "4:00 PM",
+    "venue": "Auditorium Hall B",
+    "status": "Past",
+    "description": "Guest speaker discussed black hole thermodynamics and recent gravitational wave detections."
+  },
+  {
+    "eventName": "Planetarium Virtual Tour",
+    "clubName": "Astronomy & Space Club",
+    "date": "May 15, 2026",
+    "time": "6:00 PM",
+    "venue": "AV Room",
+    "status": "Past",
+    "description": "Immersive simulation exploring the outer reaches of our solar system and galaxy structure."
+  },
+  {
+    "eventName": "Introduction to Telescopes Workshop",
+    "clubName": "Astronomy & Space Club",
+    "date": "Jun 10, 2026",
+    "time": "3:00 PM",
+    "venue": "Science Block Lab 4",
+    "status": "Past",
+    "description": "Taught members how to calibrate, align, and maintain optical reflector and refractor telescopes."
+  },
+
+  {
+    "eventName": "Classic Movie Screening",
+    "clubName": "Film & Cinema Club",
+    "date": "Oct 05, 2026",
+    "time": "6:30 PM",
+    "venue": "Campus Theater",
+    "status": "Upcoming",
+    "description": "Join us for a screening of a restored classic, followed by a deep dive discussion into its cinematography and cultural impact. Popcorn provided!"
+  },
+  {
+    "eventName": "Documentary Filmmaking Seminar",
+    "clubName": "Film & Cinema Club",
+    "date": "Oct 19, 2026",
+    "time": "4:00 PM",
+    "venue": "Media Room 2",
+    "status": "Upcoming",
+    "description": "Learned how to conduct interviews, build narrative tension, and structure social-impact documentaries."
+  },
+  {
+    "eventName": "Video Editing & Color Grading Workshop",
+    "clubName": "Film & Cinema Club",
+    "date": "Nov 16, 2026",
+    "time": "2:30 PM",
+    "venue": "Media Lab",
+    "status": "Upcoming",
+    "description": "Hands-on editing session covering timeline cuts, audio syncing, and cinematic color palettes."
+  },
+  {
+    "eventName": "Campus Short Film Festival",
+    "clubName": "Film & Cinema Club",
+    "date": "Dec 16, 2026",
+    "time": "5:00 PM",
+    "venue": "Main Auditorium",
+    "status": "Upcoming",
+    "description": "Screening ceremony featuring student-directed short films competing for audience choice awards."
+  },
+  {
+    "eventName": "48-Hour Short Film Challenge",
+    "clubName": "Film & Cinema Club",
+    "date": "Aug 20, 2026",
+    "time": "9:00 AM",
+    "venue": "Media Lab",
+    "status": "Past",
+    "description": "Student teams wrote, shot, and edited 3-minute short films over a single weekend using provided prompts."
+  },
+  {
+    "eventName": "Cinematography Lighting Masterclass",
+    "clubName": "Film & Cinema Club",
+    "date": "Mar 10, 2026",
+    "time": "3:00 PM",
+    "venue": "Studio A",
+    "status": "Past",
+    "description": "Explored three-point lighting setups, softboxes, and mood creation for cinematic scenes."
+  },
+  {
+    "eventName": "Screenwriting Workshop",
+    "clubName": "Film & Cinema Club",
+    "date": "Apr 15, 2026",
+    "time": "4:00 PM",
+    "venue": "Seminar Hall",
+    "status": "Past",
+    "description": "Focused on dialogue writing, plot structuring, and character arc development."
+  },
+  {
+    "eventName": "Indie Film Retrospective Screening",
+    "clubName": "Film & Cinema Club",
+    "date": "May 20, 2026",
+    "time": "6:00 PM",
+    "venue": "Campus Theater",
+    "status": "Past",
+    "description": "Screened award-winning indie arthouse movies followed by an open critical analysis panel."
+  },
+
+  {
+    "eventName": "Startup Pitch Night",
+    "clubName": "Entrepreneurship Club",
+    "date": "Nov 20, 2026",
+    "time": "5:00 PM",
+    "venue": "Business School Auditorium",
+    "status": "Upcoming",
+    "description": "Watch five student-led startups pitch their ideas to a panel of alumni investors for seed funding and mentorship."
+  },
+  {
+    "eventName": "Fintech & Crypto Seminar",
+    "clubName": "Entrepreneurship Club",
+    "date": "Oct 14, 2026",
+    "time": "4:00 PM",
+    "venue": "Lecture Hall 3",
+    "status": "Upcoming",
+    "description": "Exploring trends in digital payments, decentralized finance, and modern banking solutions."
+  },
+  {
+    "eventName": "Marketing & Growth Hacking Workshop",
+    "clubName": "Entrepreneurship Club",
+    "date": "Nov 04, 2026",
+    "time": "3:00 PM",
+    "venue": "Business Lab",
+    "status": "Upcoming",
+    "description": "Learned practical customer acquisition strategies, social media funnels, and organic growth metrics."
+  },
+  {
+    "eventName": "Annual Business Case Competition",
+    "clubName": "Entrepreneurship Club",
+    "date": "Dec 19, 2026",
+    "time": "10:00 AM",
+    "venue": "Management Conference Room",
+    "status": "Upcoming",
+    "description": "Inter-department teams competed to solve a complex corporate restructuring case study."
+  },
+  {
+    "eventName": "Networking & Resume Workshop",
+    "clubName": "Entrepreneurship Club",
+    "date": "Sep 10, 2026",
+    "time": "4:00 PM",
+    "venue": "Student Center",
+    "status": "Past",
+    "description": "An interactive session where students learned how to build a personal brand, network effectively on LinkedIn, and structure a winning resume."
+  },
+  {
+    "eventName": "Startup Ideation Bootcamp",
+    "clubName": "Entrepreneurship Club",
+    "date": "Feb 25, 2026",
+    "time": "2:00 PM",
+    "venue": "Incubation Cell",
+    "status": "Past",
+    "description": "Brainstormed real-world problem statements and validated market fit through rapid prototyping."
+  },
+  {
+    "eventName": "Venture Capital Panel Discussion",
+    "clubName": "Entrepreneurship Club",
+    "date": "Apr 02, 2026",
+    "time": "5:30 PM",
+    "venue": "Main Auditorium",
+    "status": "Past",
+    "description": "Industry angel investors shared insights on what they look for before funding early-stage student founders."
+  },
+  {
+    "eventName": "Product Management Masterclass",
+    "clubName": "Entrepreneurship Club",
+    "date": "May 18, 2026",
+    "time": "3:00 PM",
+    "venue": "Seminar Hall",
+    "status": "Past",
+    "description": "Broken down product lifecycle management, user persona mapping, and feature roadmapping."
+  },
+
+  {
+    "eventName": "Night Sky & Astrophotography Basics",
+    "clubName": "Photography Club",
+    "date": "Oct 10, 2026",
+    "time": "8:00 PM",
+    "venue": "College Grounds",
+    "status": "Upcoming",
+    "description": "Learned long-exposure configurations to capture celestial objects and star trails."
+  },
+  {
+    "eventName": "Campus Architecture Photo Walk",
+    "clubName": "Photography Club",
+    "date": "Nov 02, 2026",
+    "time": "4:00 PM",
+    "venue": "Main Quad",
+    "status": "Upcoming",
+    "description": "Explored symmetry, leading lines, and geometric compositions across campus buildings."
+  },
+  {
+    "eventName": "Studio Lighting & Portraiture",
+    "clubName": "Photography Club",
+    "date": "Nov 20, 2026",
+    "time": "3:00 PM",
+    "venue": "Media Studio",
+    "status": "Upcoming",
+    "description": "Practiced softbox positioning, rim lighting, and reflector manipulation for professional portraits."
+  },
+  {
+    "eventName": "Annual Photography Exhibition",
+    "clubName": "Photography Club",
+    "date": "Dec 12, 2026",
+    "time": "10:00 AM",
+    "venue": "Exhibition Hall",
+    "status": "Upcoming",
+    "description": "A curated display of student photography entries judged across macro, street, and landscape categories."
+  },
+  {
+    "eventName": "Smartphone Photography Masterclass",
+    "clubName": "Photography Club",
+    "date": "Mar 10, 2026",
+    "time": "2:00 PM",
+    "venue": "Room 101",
+    "status": "Past",
+    "description": "Taught advanced manual settings, HDR modes, and composition rules using regular smartphones."
+  },
+  {
+    "eventName": "Golden Hour Portrait Walk",
+    "clubName": "Photography Club",
+    "date": "Apr 15, 2026",
+    "time": "5:30 PM",
+    "venue": "Botanical Garden",
+    "status": "Past",
+    "description": "Captured stunning portraits leveraging natural warm sunset lighting and depth of field."
+  },
+  {
+    "eventName": "Macro Photography Session",
+    "clubName": "Photography Club",
+    "date": "May 20, 2026",
+    "time": "3:00 PM",
+    "venue": "Greenhouse",
+    "status": "Past",
+    "description": "Explored close-up details of flora and insects using macro lens attachments."
+  },
+  {
+    "eventName": "Monochrome Editing Workshop",
+    "clubName": "Photography Club",
+    "date": "Jun 05, 2026",
+    "time": "4:00 PM",
+    "venue": "Computer Lab 2",
+    "status": "Past",
+    "description": "Learned color channel luminance grading to convert color captures into dramatic black-and-white portraits."
+  },
+
+  {
+    "eventName": "IoT Smart Home Prototype Sprint",
+    "clubName": "Coding & Robotics",
+    "date": "Oct 08, 2026",
+    "time": "10:00 AM",
+    "venue": "Robotics Lab",
+    "status": "Upcoming",
+    "description": "Built automated sensor-driven home gadgets using NodeMCU and ESP32 microcontrollers."
+  },
+  {
+    "eventName": "Competitive Programming Challenge",
+    "clubName": "Coding & Robotics",
+    "date": "Oct 28, 2026",
+    "time": "2:00 PM",
+    "venue": "Computer Lab 4",
+    "status": "Upcoming",
+    "description": "A rapid-fire algorithmic problem-solving competition testing data structures and efficiency."
+  },
+  {
+    "eventName": "Open Source Contribution Drive",
+    "clubName": "Coding & Robotics",
+    "date": "Nov 15, 2026",
+    "time": "1:00 PM",
+    "venue": "Tech Hub",
+    "status": "Upcoming",
+    "description": "Guided session helping members merge their first pull requests into live GitHub repositories."
+  },
+  {
+    "eventName": "Robotics Battle Arena",
+    "clubName": "Coding & Robotics",
+    "date": "Dec 05, 2026",
     "time": "11:00 AM",
+    "venue": "Indoor Sports Complex",
+    "status": "Upcoming",
+    "description": "Custom-built remote-controlled robots competed in a tournament bracket obstacle course."
+  },
+  {
+    "eventName": "Python Automation Bootcamp",
+    "clubName": "Coding & Robotics",
+    "date": "Feb 12, 2026",
+    "time": "3:00 PM",
+    "venue": "Computer Lab 1",
+    "status": "Past",
+    "description": "Automated repetitive file organization, web scraping, and spreadsheet tasks using Python scripts."
+  },
+  {
+    "eventName": "Arduino Beginner Workshop",
+    "clubName": "Coding & Robotics",
+    "date": "Mar 22, 2026",
+    "time": "2:00 PM",
+    "venue": "Electronics Lab",
+    "status": "Past",
+    "description": "Wired breadboards, LEDs, and ultrasonic sensors to build obstacle-detecting buzzer circuits."
+  },
+  {
+    "eventName": "Web Development Hackathon",
+    "clubName": "Coding & Robotics",
+    "date": "Apr 18, 2026",
+    "time": "9:00 AM",
+    "venue": "Main Computer Center",
+    "status": "Past",
+    "description": "Teams created full-stack responsive web applications addressing localized campus problems."
+  },
+  {
+    "eventName": "AI & Machine Learning Intro",
+    "clubName": "Coding & Robotics",
+    "date": "May 14, 2026",
+    "time": "4:00 PM",
+    "venue": "Seminar Hall A",
+    "status": "Past",
+    "description": "Introduced core concepts of training simple classification models using Python and Scikit-Learn."
+  },
+
+  {
+    "eventName": "Monsoon Rhythm Dance Jam",
+    "clubName": "Cultural Club",
+    "date": "Sep 25, 2026",
+    "time": "5:00 PM",
+    "venue": "Open Air Theatre",
+    "status": "Upcoming",
+    "description": "An energetic evening of group choreography and spontaneous dance battles."
+  },
+  {
+    "eventName": "Stand-up Comedy & Open Mic",
+    "clubName": "Cultural Club",
+    "date": "Oct 18, 2026",
+    "time": "6:00 PM",
+    "venue": "Student Cafeteria",
+    "status": "Upcoming",
+    "description": "Showcasing student humor, poetry snippets, and musical stand-up routines."
+  },
+  {
+    "eventName": "Diwali Cultural Showcase",
+    "clubName": "Cultural Club",
+    "date": "Nov 08, 2026",
+    "time": "6:30 PM",
+    "venue": "Main Auditorium",
+    "status": "Upcoming",
+    "description": "Festive evening featuring classical theater skits, traditional attire parades, and folk dances."
+  },
+  {
+    "eventName": "Annual Inter-College Fest",
+    "clubName": "Cultural Club",
+    "date": "Dec 15, 2026",
+    "time": "10:00 AM",
+    "venue": "Campus Grounds",
+    "status": "Upcoming",
+    "description": "A massive multi-day celebration hosting talent competitions, fashion shows, and celebrity guest performances."
+  },
+  {
+    "eventName": "Traditional Folk Dance Workshop",
+    "clubName": "Cultural Club",
+    "date": "Jan 20, 2026",
+    "time": "4:00 PM",
+    "venue": "Dance Studio",
+    "status": "Past",
+    "description": "Taught regional folk steps and traditional rhythmic footwork configurations."
+  },
+  {
+    "eventName": "Inter-House Drama Night",
+    "clubName": "Cultural Club",
+    "date": "Feb 14, 2026",
+    "time": "6:00 PM",
     "venue": "Auditorium",
     "status": "Past",
-    "description": "A rigorous parliamentary-style debate tournament where students argued complex socio-economic topics. Judged by faculty members from the Humanities department."
+    "description": "Short theatrical acts staged and acted entirely by student dramatics teams."
   },
   {
-    "eventName": "Campus Yoga Activity",
+    "eventName": "Spring Fest Cultural Eve",
+    "clubName": "Cultural Club",
+    "date": "Mar 25, 2026",
+    "time": "5:30 PM",
+    "venue": "Main Lawn",
+    "status": "Past",
+    "description": "Celebrated the onset of spring with vibrant musical performances and dance showcases."
+  },
+  {
+    "eventName": "Classical Music Fusion Night",
+    "clubName": "Cultural Club",
+    "date": "Apr 30, 2026",
+    "time": "6:00 PM",
+    "venue": "Indoor Amphitheater",
+    "status": "Past",
+    "description": "Blended classical Indian ragas with modern western jazz rhythms."
+  },
+
+  {
+    "eventName": "Sci-Fi & Fantasy Storytelling Night",
+    "clubName": "Literary Club",
+    "date": "Oct 02, 2026",
+    "time": "5:00 PM",
+    "venue": "Library Discussion Room",
+    "status": "Upcoming",
+    "description": "Shared original speculative fiction pieces and imagined futuristic worldscapes."
+  },
+  {
+    "eventName": "Journalism & Editorial Workshop",
+    "clubName": "Literary Club",
+    "date": "Oct 22, 2026",
+    "time": "3:30 PM",
+    "venue": "Media Room",
+    "status": "Upcoming",
+    "description": "Taught article structuring, investigative reporting ethics, and opinion column writing."
+  },
+  {
+    "eventName": "Bilingual Poetry Slam",
+    "clubName": "Literary Club",
+    "date": "Nov 12, 2026",
+    "time": "5:30 PM",
+    "venue": "Student Lounge",
+    "status": "Upcoming",
+    "description": "Poets recited expressive verses in regional languages and English."
+  },
+  {
+    "eventName": "Annual Literary Quiz & Fest",
+    "clubName": "Literary Club",
+    "date": "Dec 01, 2026",
+    "time": "2:00 PM",
+    "venue": "Auditorium Hall C",
+    "status": "Upcoming",
+    "description": "Challenged vocabulary, literary history, and mythology trivia across competitive rounds."
+  },
+  {
+    "eventName": "Slam Poetry Open Mic",
+    "clubName": "Literary Club",
+    "date": "Feb 05, 2026",
+    "time": "5:00 PM",
+    "venue": "Cafeteria Stage",
+    "status": "Past",
+    "description": "An intimate evening of raw emotion, spoken word poetry, and acoustic backing."
+  },
+  {
+    "eventName": "Inter-College Parliamentary Debate",
+    "clubName": "Literary Club",
+    "date": "Mar 12, 2026",
+    "time": "10:00 AM",
+    "venue": "Law Seminar Hall",
+    "status": "Past",
+    "description": "Rigorous debates arguing policy motions regarding technology regulations and economics."
+  },
+  {
+    "eventName": "Book Exchange & Reading Circle",
+    "clubName": "Literary Club",
+    "date": "Apr 10, 2026",
+    "time": "4:00 PM",
+    "venue": "University Library",
+    "status": "Past",
+    "description": "Members traded novels and discussed standout psychological thriller motifs."
+  },
+  {
+    "eventName": "Creative Writing Masterclass",
+    "clubName": "Literary Club",
+    "date": "May 08, 2026",
+    "time": "3:00 PM",
+    "venue": "Room 204",
+    "status": "Past",
+    "description": "Focused on subverting tropes, building rich character dialogue, and pacing narrative tension."
+  },
+
+  {
+    "eventName": "Zumba Fitness Party",
     "clubName": "Fitness Club",
-    "date": "Oct 20",
-    "time": "7:00 AM",
-    "venue": "Campus Lawns",
+    "date": "Sep 28, 2026",
+    "time": "5:30 PM",
+    "venue": "Sports Complex Hall",
     "status": "Upcoming",
-    "description": "Start your morning right with a guided 60-minute Vinyasa yoga flow. Designed for all experience levels to promote mindfulness, flexibility, and physical wellness before classes begin. Yoga mats are provided."
+    "description": "High-energy dance fitness workout set to upbeat international rhythms."
   },
   {
-    "eventName": "International Food Fest",
-    "clubName": "Cooking Club",
-    "date": "Nov 02",
-    "time": "12:00 PM",
-    "venue": "Main Courtyard",
+    "eventName": "Functional Strength Workshop",
+    "clubName": "Fitness Club",
+    "date": "Oct 15, 2026",
+    "time": "4:00 PM",
+    "venue": "Gymnasium Floor",
     "status": "Upcoming",
-    "description": "Taste authentic dishes from over 20 different countries prepared entirely by student members of the Cooking Club. A culinary journey exploring global flavors, spices, and cooking techniques."
+    "description": "Taught safe lifting forms, bodyweight compound movements, and injury prevention."
+  },
+  {
+    "eventName": "Autumn Campus Marathon",
+    "clubName": "Fitness Club",
+    "date": "Nov 10, 2026",
+    "time": "6:30 AM",
+    "venue": "Main Gate Starting Line",
+    "status": "Upcoming",
+    "description": "A 5km community run promoting cardiovascular health and school spirit."
+  },
+  {
+    "eventName": "Self-Defense & Agility Masterclass",
+    "clubName": "Fitness Club",
+    "date": "Dec 03, 2026",
+    "time": "4:30 PM",
+    "venue": "Indoor Mat Room",
+    "status": "Upcoming",
+    "description": "Learned situational awareness, basic martial arts escapes, and core balance drills."
+  },
+  {
+    "eventName": "Sunrise Yoga Retreat",
+    "clubName": "Fitness Club",
+    "date": "Jan 15, 2026",
+    "time": "6:00 AM",
+    "venue": "Main Lawn",
+    "status": "Past",
+    "description": "Guided breathing exercises and hatha yoga flows to jumpstart physical well-being."
+  },
+  {
+    "eventName": "HIIT & Core Strength Challenge",
+    "clubName": "Fitness Club",
+    "date": "Feb 28, 2026",
+    "time": "5:00 PM",
+    "venue": "Sports Arena",
+    "status": "Past",
+    "description": "Intense circuit training session pushing endurance thresholds with bodyweight intervals."
+  },
+  {
+    "eventName": "Campus 5K Marathon Training",
+    "clubName": "Fitness Club",
+    "date": "Mar 30, 2026",
+    "time": "6:30 AM",
+    "venue": "Sports Track",
+    "status": "Past",
+    "description": "Paced running sessions focused on stamina building and proper running posture."
+  },
+  {
+    "eventName": "Nutrition & Sports Diet Seminar",
+    "clubName": "Fitness Club",
+    "date": "May 05, 2026",
+    "time": "4:00 PM",
+    "venue": "Medical Block Hall",
+    "status": "Past",
+    "description": "Discussed macro-nutrient balances, hydration myths, and muscle recovery meal plans."
+  },
+
+  {
+    "eventName": "Healthy Meal Prep Workshop",
+    "clubName": "Cooking Club",
+    "date": "Oct 05, 2026",
+    "time": "3:00 PM",
+    "venue": "Culinary Kitchen Lab",
+    "status": "Upcoming",
+    "description": "Learned quick, budget-friendly, and nutrient-dense meal prep ideas for busy students."
+  },
+  {
+    "eventName": "Global Dessert Masterclass",
+    "clubName": "Cooking Club",
+    "date": "Oct 26, 2026",
+    "time": "2:00 PM",
+    "venue": "Culinary Kitchen Lab",
+    "status": "Upcoming",
+    "description": "Baked classic international treats including French macarons and Italian tiramisu."
+  },
+  {
+    "eventName": "Charity Bake Sale",
+    "clubName": "Cooking Club",
+    "date": "Nov 18, 2026",
+    "time": "11:00 AM",
+    "venue": "Student Plaza",
+    "status": "Upcoming",
+    "description": "Prepared homemade cookies, brownies, and pastries to raise funds for local animal shelters."
+  },
+  {
+    "eventName": "Masterchef Campus Edition",
+    "clubName": "Cooking Club",
+    "date": "Dec 08, 2026",
+    "time": "1:00 PM",
+    "venue": "Main Mess Hall",
+    "status": "Upcoming",
+    "description": "Cook-off competition where teams created mystery box gourmet dishes under a strict clock."
+  },
+  {
+    "eventName": "Baking Basics: Cookies & Pastries",
+    "clubName": "Cooking Club",
+    "date": "Feb 10, 2026",
+    "time": "2:30 PM",
+    "venue": "Kitchen Lab",
+    "status": "Past",
+    "description": "Mastered oven temperatures, dough kneading, and butter layering techniques."
   },
   {
     "eventName": "Flameless Cooking Competition",
     "clubName": "Cooking Club",
-    "date": "Aug 25",
+    "date": "Mar 18, 2026",
     "time": "3:00 PM",
-    "venue": "Student Lounge",
+    "venue": "Activity Hall",
     "status": "Past",
-    "description": "Students showcased their culinary creativity without the use of stoves or ovens, crafting intricate desserts, salads, and sandwiches under a strict time limit."
+    "description": "Created delicious salads, sandwiches, and smoothies without using any active heat sources."
   },
   {
-    "eventName": "Re-Planting Activity",
-    "clubName": "Gardening Club",
-    "date": "Oct 28",
-    "time": "9:00 AM",
-    "venue": "North Campus Gardens",
-    "status": "Upcoming",
-    "description": "Connect with nature and help us build a greener campus. Volunteers will be planting native flora, setting up organic compost bins, and learning sustainable urban gardening techniques."
-  },
-  {
-    "eventName": "Visual Storytelling Workshop",
-    "clubName": "Photography Club",
-    "date": "Oct 30",
+    "eventName": "Italian Pasta Masterclass",
+    "clubName": "Cooking Club",
+    "date": "Apr 22, 2026",
     "time": "4:00 PM",
-    "venue": "Media Lab",
-    "status": "Upcoming",
-    "description": "Learn how to capture compelling narratives through your lens. This workshop covers framing, lighting, and Adobe Lightroom editing basics for aspiring photojournalists and creative photographers."
+    "venue": "Kitchen Lab",
+    "status": "Past",
+    "description": "Rolled fresh egg pasta dough from scratch and cooked authentic creamy white sauce."
   },
   {
-    "eventName": "Documentary Competition",
-    "clubName": "Photography Club",
-    "date": "Sep 22",
-    "time": "5:00 PM",
-    "venue": "Screening Room",
+    "eventName": "Street Food Fusion Challenge",
+    "clubName": "Cooking Club",
+    "date": "May 19, 2026",
+    "time": "2:00 PM",
+    "venue": "Mess Courtyard",
     "status": "Past",
-    "description": "A showcase of short visual documentaries created by students highlighting unseen stories around the city. The winning documentary focused on the lives of local street food vendors."
+    "description": "Combined local street food elements into modern experimental culinary dishes."
+  },
+
+  {
+    "eventName": "Vertical Gardening Workshop",
+    "clubName": "Gardening Club",
+    "date": "Oct 01, 2026",
+    "time": "3:00 PM",
+    "venue": "Botany Greenhouse",
+    "status": "Upcoming",
+    "description": "Learned how to set up space-saving hanging planters and recycled bottle wall gardens."
+  },
+  {
+    "eventName": "Herbal & Medicinal Plant Tour",
+    "clubName": "Gardening Club",
+    "date": "Oct 20, 2026",
+    "time": "4:00 PM",
+    "venue": "Campus Botanical Garden",
+    "status": "Upcoming",
+    "description": "Identified common healing herbs, aloe varieties, and indoor air-purifying greenery."
+  },
+  {
+    "eventName": "Monsoon Tree Plantation Drive",
+    "clubName": "Gardening Club",
+    "date": "Nov 05, 2026",
+    "time": "9:00 AM",
+    "venue": "North Campus Boundary",
+    "status": "Upcoming",
+    "description": "Planted saplings across empty land patches to boost regional biodiversity and shade coverage."
+  },
+  {
+    "eventName": "Green Campus Beautification Week",
+    "clubName": "Gardening Club",
+    "date": "Dec 02, 2026",
+    "time": "10:00 AM",
+    "venue": "Department Courtyards",
+    "status": "Upcoming",
+    "description": "Revitalized flower beds, trimmed hedges, and set up decorative terracotta pots."
+  },
+  {
+    "eventName": "Terrarium Making Workshop",
+    "clubName": "Gardening Club",
+    "date": "Feb 02, 2026",
+    "time": "2:00 PM",
+    "venue": "Botany Lab",
+    "status": "Past",
+    "description": "Assembled mini self-sustaining glass ecosystems using moss, pebbles, and succulents."
+  },
+  {
+    "eventName": "Spring Campus Plantation Drive",
+    "clubName": "Gardening Club",
+    "date": "Mar 15, 2026",
+    "time": "8:30 AM",
+    "venue": "Sports Field Perimeter",
+    "status": "Past",
+    "description": "Planted flowering shrub lines along walking paths to enhance spring visuals."
+  },
+  {
+    "eventName": "Organic Composting Seminar",
+    "clubName": "Gardening Club",
+    "date": "Apr 12, 2026",
+    "time": "3:30 PM",
+    "venue": "Open Air Shade",
+    "status": "Past",
+    "description": "Taught kitchen waste recycling methods using vermicomposting bins."
+  },
+  {
+    "eventName": "Indoor Plant Care Masterclass",
+    "clubName": "Gardening Club",
+    "date": "May 10, 2026",
+    "time": "4:00 PM",
+    "venue": "Greenhouse",
+    "status": "Past",
+    "description": "Discussed watering schedules, soil mixing ratios, and natural pest control remedies."
   }
 ]

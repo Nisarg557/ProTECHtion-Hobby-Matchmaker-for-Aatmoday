@@ -1,963 +1,366 @@
-/* =====================================================
-   AATMODAY CLUB DATA
-
-   Event information is based on the supplied
-   Aatmoday Hobby Club brochure.
-
-   The brochure contains historical events through 2023.
-   It does NOT provide current 2026 upcoming-event dates,
-   so upcoming events are displayed as "To be announced"
-   rather than inventing dates.
-===================================================== */
-
-
-const clubData = {
-
-
-    /* =================================================
-       PHOTOGRAPHY
-    ================================================= */
-
-    photography: {
-
-        name: "Photography Club",
-
-        icon: "📷",
-
-        description:
-            "Capture moments, tell stories and explore the world through your lens.",
-
-        about:
-            "The Photography Club gives students a space to explore photography, visual creativity and storytelling. Students can develop their creative skills while participating in university hobby-club activities.",
-
-        activities: [
-
-            "Photography and visual storytelling",
-
-            "Creative photography activities",
-
-            "Photography workshops",
-
-            "Documentary and visual-content activities"
-
-        ],
-
-        pastEvents: [
-
-            {
-                year: "2022",
-                name: "Photography Workshop",
-                date: "19th November 2022"
-            },
-
-            {
-                year: "2023",
-                name: "Documentary Competition",
-                date: "22nd September 2023"
-            }
-
-        ],
-
-        upcoming: [],
-
-        upcomingMessage:
-            "Upcoming Photography Club activities will be announced through the Aatmoday event calendar."
-
-    },
-
-
-    /* =================================================
-       CULTURAL
-    ================================================= */
-
-    cultural: {
-
-        name: "Cultural Club",
-
-        icon: "🎭",
-
-        description:
-            "Celebrate culture, creativity, music, dance and performances.",
-
-        about:
-            "The Cultural Club brings students together through cultural activities and university programs. It provides opportunities for students to participate in performances, celebrations and cultural experiences.",
-
-        activities: [
-
-            "Cultural performances",
-
-            "Music and dance activities",
-
-            "University celebrations",
-
-            "Cultural programs and festivals"
-
-        ],
-
-        pastEvents: [
-
-            {
-                year: "2022",
-                name: "Gandhi Jayanti Celebration",
-                date: "2nd October 2022"
-            },
-
-            {
-                year: "2022",
-                name: "Dussehra Fest",
-                date: "5th October 2022"
-            },
-
-            {
-                year: "2023",
-                name: "Deekshotsava 2022",
-                date: "17th March 2023"
-            },
-
-            {
-                year: "2023",
-                name: "Janmashtami Mahotsava",
-                date: "8th September 2023"
-            },
-
-            {
-                year: "2023",
-                name: "Deekshotsava 2023",
-                date: "23rd September 2023"
-            }
-
-        ],
-
-        upcoming: [],
-
-        upcomingMessage:
-            "Upcoming cultural programs will be announced through the Aatmoday event calendar."
-
-    },
-
-
-    /* =================================================
-       LITERARY
-    ================================================= */
-
-    literary: {
-
-        name: "Literary Club",
-
-        icon: "📚",
-
-        description:
-            "Read, write, discuss and explore literature and creative expression.",
-
-        about:
-            "The Literary Club provides students with a space for literary expression, communication and discussion. It is suitable for students interested in reading, writing, debate and creative expression.",
-
-        activities: [
-
-            "Literary activities",
-
-            "Creative writing",
-
-            "Debates and discussions",
-
-            "Reading and literary expression"
-
-        ],
-
-        pastEvents: [
-
-            {
-                year: "2022",
-                name: "Debate Competition",
-                date: "19th November 2022"
-            },
-
-            {
-                year: "2023",
-                name: "Akalpit — The Literary Fest",
-                date: "3rd–8th February 2023"
-            }
-
-        ],
-
-        upcoming: [],
-
-        upcomingMessage:
-            "Upcoming Literary Club activities will be announced through the Aatmoday event calendar."
-
-    },
-
-
-    /* =================================================
-       FITNESS
-    ================================================= */
-
-    fitness: {
-
-        name: "Fitness Club",
-
-        icon: "💪",
-
-        description:
-            "Stay active, build healthy habits and participate in fitness activities.",
-
-        about:
-            "The Fitness Club encourages students to participate in physical and wellness activities. It provides a community environment for students who want to stay active and explore fitness-related activities.",
-
-        activities: [
-
-            "Fitness activities",
-
-            "Yoga and wellness",
-
-            "Physical activities",
-
-            "Healthy and active lifestyle initiatives"
-
-        ],
-
-        pastEvents: [
-
-            {
-                year: "2022",
-                name: "Yoga Activity",
-                date: "14th October 2022"
-            }
-
-        ],
-
-        upcoming: [],
-
-        upcomingMessage:
-            "Upcoming Fitness Club activities will be announced through the Aatmoday event calendar."
-
-    },
-
-
-    /* =================================================
-       COOKING
-    ================================================= */
-
-    cooking: {
-
-        name: "Cooking Club",
-
-        icon: "👨‍🍳",
-
-        description:
-            "Explore food, cooking, recipes and culinary creativity.",
-
-        about:
-            "The Cooking Club provides students with opportunities to explore their interest in cooking and culinary activities. Students can participate in food-related events and creative cooking activities.",
-
-        activities: [
-
-            "Cooking activities",
-
-            "Culinary creativity",
-
-            "Cooking competitions",
-
-            "Food-related events"
-
-        ],
-
-        pastEvents: [
-
-            {
-                year: "2022",
-                name: "Flameless Cooking Competition",
-                date: "16th October 2022"
-            }
-
-        ],
-
-        upcoming: [],
-
-        upcomingMessage:
-            "Upcoming Cooking Club activities will be announced through the Aatmoday event calendar."
-
-    },
-
-
-    /* =================================================
-       GARDENING
-    ================================================= */
-
-    gardening: {
-
-        name: "Gardening Club",
-
-        icon: "🌱",
-
-        description:
-            "Connect with nature through plants, gardening and environmental activities.",
-
-        about:
-            "The Gardening Club gives students an opportunity to participate in gardening and environmental activities. It encourages students to connect with nature and contribute to greener spaces.",
-
-        activities: [
-
-            "Gardening activities",
-
-            "Planting initiatives",
-
-            "Environmental activities",
-
-            "Nature and sustainability initiatives"
-
-        ],
-
-        pastEvents: [
-
-            {
-                year: "2022",
-                name: "Re-Planting Activity",
-                date: "7th October 2022"
-            }
-
-        ],
-
-        upcoming: [],
-
-        upcomingMessage:
-            "Upcoming Gardening Club activities will be announced through the Aatmoday event calendar."
-
-    },
-
-
-    /* =================================================
-       CODING & ROBOTICS
-    ================================================= */
-
-    coding: {
-
-        name: "Coding & Robotics",
-
-        icon: "🤖",
-
-        description:
-            "Build, experiment and explore coding, robotics and technology.",
-
-        about:
-            "The Coding & Robotics Club provides a space for students interested in technology and technical activities. Students can explore coding, robotics, emerging technologies and technical events.",
-
-        activities: [
-
-            "Coding and programming",
-
-            "Robotics",
-
-            "Technology workshops and talks",
-
-            "Technical competitions and activities"
-
-        ],
-
-        pastEvents: [
-
-            {
-                year: "2022",
-                name: "Cloud Computing For Beginners Talk",
-                date: "3rd December 2022"
-            },
-
-            {
-                year: "2023",
-                name: "Geek Week — Technical Fest",
-                date: "20th–25th March 2023"
-            },
-
-            {
-                year: "2023",
-                name: "Google I/O Extended",
-                date: "20th May 2023"
-            },
-
-            {
-                year: "2023",
-                name: "Techno Talk",
-                date: "2nd September 2023"
-            },
-
-            {
-                year: "2023",
-                name: "Robo Rumbles",
-                date: "19th October 2023"
-            },
-
-            {
-                year: "2023",
-                name: "Unlocking the Future (GDG)",
-                date: "21st October 2023"
-            }
-
-        ],
-
-        upcoming: [],
-
-        upcomingMessage:
-            "Upcoming Coding & Robotics activities will be announced through the Aatmoday event calendar."
-
-    }
-
-};
-
-
-
-/* =====================================================
-   GET CLUB ID
-===================================================== */
-
-const params =
-    new URLSearchParams(
-        window.location.search
-    );
-
-
-const clubId =
-    params.get("id");
-
-
-const club =
-    clubData[clubId];
-
-
-
-/* =====================================================
-   INVALID CLUB
-===================================================== */
-
-if (!club) {
-
-    document.title =
-        "Aatmoday - Club Not Found";
-
-
-    document.getElementById(
-        "clubHero"
-    ).innerHTML = `
-
-        <div>
-
-            <h1>
-                Club Not Found
-            </h1>
-
-            <p class="club-hero-description">
-                We couldn't find the club you're looking for.
-            </p>
-
-        </div>
-
-    `;
-
-}
-
-
-
-/* =====================================================
-   DISPLAY CLUB
-===================================================== */
-
-else {
-
-
-    document.title =
-        `Aatmoday - ${club.name}`;
-
-
-
-    /* ================================================
-       HERO
-    ================================================ */
-
-    document.getElementById(
-        "clubHero"
-    ).innerHTML = `
-
-        <div class="hero-main">
-
-            <div class="club-icon-large">
-
-                ${club.icon}
-
-            </div>
-
-
-            <div>
-
-                <h1>
-                    ${club.name}
-                </h1>
-
-                <p class="club-hero-description">
-
-                    ${club.description}
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-actions">
-
-            <p>
-                Interested in becoming a member?
-            </p>
-
-            <button
-                class="enrol-button"
-                onclick="openEnrolModal()"
-            >
-
-                Enrol Now →
-
-            </button>
-
-        </div>
-
-    `;
-
-
-
-    /* ================================================
-       ACTIVITIES
-    ================================================ */
-
-    const activitiesHTML =
-        club.activities
-            .map(
-                activity => `
-
-                    <li>
-                        ${activity}
-                    </li>
-
-                `
-            )
-            .join("");
-
-
-
-    /* ================================================
-       PAST EVENTS
-    ================================================ */
-
-    let pastEventsHTML = "";
-
-
-    if (
-        club.pastEvents.length === 0
-    ) {
-
-        pastEventsHTML = `
-
-            <div class="upcoming-box">
-
-                <div class="upcoming-icon">
-                    📅
-                </div>
-
-                <strong>
-                    No past events listed
-                </strong>
-
-                <p>
-                    The available brochure does not list
-                    specific past events for this club.
-                </p>
-
-            </div>
-
-        `;
-
-    } else {
-
-        pastEventsHTML =
-            club.pastEvents
-                .map(
-                    event => `
-
-                        <div class="event-item">
-
-                            <div class="event-year">
-
-                                ${event.year}
-
-                            </div>
-
-
-                            <div>
-
-                                <strong>
-                                    ${event.name}
-                                </strong>
-
-                                <span>
-                                    ${event.date}
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    `
-                )
-                .join("");
-
-    }
-
-
-
-    /* ================================================
-       UPCOMING EVENTS
-    ================================================ */
-
-    let upcomingHTML = "";
-
-
-    if (
-        club.upcoming.length === 0
-    ) {
-
-        upcomingHTML = `
-
-            <div class="upcoming-box">
-
-                <div class="upcoming-icon">
-                    📅
-                </div>
-
-                <strong>
-                    Upcoming events will be announced
-                </strong>
-
-                <p>
-                    No current upcoming event date is
-                    provided in the available Aatmoday brochure.
-                </p>
-
-            </div>
-
-        `;
-
-    }
-
-
-
-    /* ================================================
-       FULL PAGE CONTENT
-    ================================================ */
-
-    document.getElementById(
-        "clubContent"
-    ).innerHTML = `
-
-
-        <!-- ABOUT -->
-
-        <div class="info-card about-card">
-
-            <h2>
-                About the Club
-            </h2>
-
-            <p>
-                ${club.about}
-            </p>
-
-        </div>
-
-
-
-        <!-- ACTIVITIES -->
-
-        <div class="info-card">
-
-            <h2>
-                ✨ What You Can Explore
-            </h2>
-
-            <ul class="activities-list">
-
-                ${activitiesHTML}
-
-            </ul>
-
-        </div>
-
-
-
-        <!-- UPCOMING -->
-
-        <div class="info-card upcoming-card">
-
-            <h2>
-                📅 Upcoming Events
-            </h2>
-
-            ${upcomingHTML}
-
-        </div>
-
-
-
-        <!-- PAST EVENTS -->
-
-        <div class="info-card events-card">
-
-            <h2>
-                🕘 Past Events
-            </h2>
-
-            <p>
-                Events listed in the available
-                Aatmoday brochure.
-            </p>
-
-
-            <div class="event-list">
-
-                ${pastEventsHTML}
-
-            </div>
-
-        </div>
-
-
-
-        <!-- WHY JOIN -->
-
-        <div class="info-card why-join-card">
-
-            <h2>
-                ⭐ Why Join ${club.name}?
-            </h2>
-
-            <div class="benefits-grid">
-
-
-                <div class="benefit-item">
-
-                    <div class="benefit-icon">
-                        🎯
-                    </div>
-
-                    <strong>
-                        Develop Skills
-                    </strong>
-
-                    <p>
-                        Explore your interests and
-                        develop practical skills.
-                    </p>
-
-                </div>
-
-
-
-                <div class="benefit-item">
-
-                    <div class="benefit-icon">
-                        👥
-                    </div>
-
-                    <strong>
-                        Meet Students
-                    </strong>
-
-                    <p>
-                        Connect with students who
-                        share similar interests.
-                    </p>
-
-                </div>
-
-
-
-                <div class="benefit-item">
-
-                    <div class="benefit-icon">
-                        🚀
-                    </div>
-
-                    <strong>
-                        Gain Experience
-                    </strong>
-
-                    <p>
-                        Participate in university
-                        activities and events.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-
-
-        <!-- ENROL -->
-
-        <div class="info-card enrol-section">
-
-            <h2>
-                Ready to Join?
-            </h2>
-
-            <p>
-                Become part of the ${club.name}
-                community and start exploring
-                your interests with other students.
-            </p>
-
-
-            <button
-                class="enrol-button bottom-enrol"
-                onclick="openEnrolModal()"
-            >
-
-                Enrol Now →
-
-            </button>
-
-        </div>
-
-    `;
-
-}
-
-
-
-/* =====================================================
-   ENROL MODAL
-===================================================== */
-
-function openEnrolModal() {
-
-    const modal =
-        document.getElementById(
-            "enrolModal"
-        );
-
-
-    const clubName =
-        document.getElementById(
-            "enrolClubName"
-        );
-
-
-    clubName.textContent =
-        `You're enrolling for the ${club.name}.`;
-
-
-    modal.classList.add("show");
-
-}
-
-
-
-/* =====================================================
-   CLOSE MODAL
-===================================================== */
-
-function closeEnrolModal() {
-
-    const modal =
-        document.getElementById(
-            "enrolModal"
-        );
-
-
-    modal.classList.remove(
-        "show"
-    );
-
-
-    document.getElementById(
-        "enrolSuccess"
-    ).style.display =
-        "none";
-
-
-    document.getElementById(
-        "enrolForm"
-    ).style.display =
-        "block";
-
-
-    document.getElementById(
-        "enrolForm"
-    ).reset();
-
-}
-
-
-
-/* =====================================================
-   SUBMIT ENROLMENT
-===================================================== */
-
-function submitEnrollment(event) {
-
-    event.preventDefault();
-
-
-    const name =
-        document.getElementById(
-            "studentName"
-        ).value.trim();
-
-
-    const email =
-        document.getElementById(
-            "studentEmail"
-        ).value.trim();
-
-
-    if (
-        !name ||
-        !email
-    ) {
-
-        alert(
-            "Please fill in your name and email."
-        );
-
+// club.js
+let globalUpcoming = [];
+let globalPast = [];
+let upcomingIndex = 0;
+let pastIndex = 0;
+const eventsPerPage = 2; 
+const rotationTime = 5000; 
+let rotationInterval = null;
+let carouselInterval = null;
+
+document.addEventListener('DOMContentLoaded', initializeClubPage);
+
+async function initializeClubPage() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const clubId = urlParams.get('id');
+
+    if (!clubId) {
+        document.getElementById('club-content').innerHTML = '<h2>Club not found. Please return to the directory.</h2>';
         return;
-
     }
 
+    try {
+        const [clubsResponse, eventsResponse] = await Promise.all([
+            fetch('club.json'),
+            fetch('event.json')
+        ]);
+        
+        const clubsData = await clubsResponse.json();
+        const eventsData = await eventsResponse.json();
 
-    /*
-       FRONTEND DEMO
+        const clubInfo = clubsData.find(c => c.id === clubId);
 
-       For the hackathon prototype, we show a
-       successful enrolment request.
+        if (!clubInfo) {
+            document.getElementById('club-content').innerHTML = '<h2>Club details are currently unavailable.</h2>';
+            return;
+        }
 
-       Later this can be connected to:
-       - Firebase
-       - MongoDB
-       - Node.js
-       - Google Forms
-       - university API
-    */
+        globalUpcoming = eventsData.filter(e => e.clubName === clubInfo.name && e.status === "Upcoming");
+        globalPast = eventsData.filter(e => e.clubName === clubInfo.name && e.status === "Past");
 
+        if (globalUpcoming.length === 0 && globalPast.length === 0) {
+            globalUpcoming = [
+                {
+                    eventName: `${clubInfo.name} Launch Meetup`,
+                    clubName: clubInfo.name,
+                    date: "Nov 25, 2026",
+                    time: "4:00 PM",
+                    venue: "Main Campus Hall",
+                    status: "Upcoming",
+                    description: `Join us for our introductory session and get to know what ${clubInfo.name} has planned for the semester.`
+                }
+            ];
+            globalPast = [
+                {
+                    eventName: `Orientation & Introductory Workshop`,
+                    clubName: clubInfo.name,
+                    date: "Jul 15, 2026",
+                    time: "3:00 PM",
+                    venue: "Activity Center",
+                    status: "Past",
+                    description: `An introductory session welcoming new members and covering foundational concepts.`
+                }
+            ];
+        }
 
-    document.getElementById(
-        "enrolForm"
-    ).style.display =
-        "none";
+        renderClubPage(clubInfo);
+        updateEventBatches();
+        initAutoCarousel();
 
+        if (globalUpcoming.length > eventsPerPage || globalPast.length > eventsPerPage) {
+            if (rotationInterval) clearInterval(rotationInterval);
+            rotationInterval = setInterval(rotateClubEvents, rotationTime);
+        }
 
-    document.getElementById(
-        "enrolSuccess"
-    ).style.display =
-        "block";
+    } catch (error) {
+        console.error("Error loading data:", error);
+        document.getElementById('club-content').innerHTML = `
+            <div style="text-align: center; color: var(--brand-red); padding: 40px;">
+                <h2>Error Loading Data</h2>
+                <p>Ensure you are running a local server (e.g., Live Server) and that data files exist.</p>
+            </div>
+        `;
+    }
+}
 
+function renderClubPage(club) {
+    const content = document.getElementById('club-content');
+    
+    const execsHTML = club.executives.map(exec => 
+        `<li><strong>${exec.name}</strong> - ${exec.designation}<br>
+        <small>${exec.department} | ${exec.contact}</small></li>`
+    ).join('');
+
+    const activitiesHTML = club.activities.map(act => `<li>${act}</li>`).join('');
+
+    // Use club specific images from json or fallback if missing
+    const clubImages = club.images && club.images.length > 0 ? club.images : [
+        `https://picsum.photos/seed/${club.id}1/1000/400`,
+        `https://picsum.photos/seed/${club.id}2/1000/400`,
+        `https://picsum.photos/seed/${club.id}3/1000/400`
+    ];
+
+    const slidesHTML = clubImages.map((imgSrc, index) => `
+        <div class="carousel-slide"><img src="${imgSrc}" alt="${club.name} Activity ${index + 1}"></div>
+    `).join('');
+
+    const indicatorsHTML = clubImages.map((_, index) => `
+        <span class="carousel-dot ${index === 0 ? 'active' : ''}" data-index="${index}"></span>
+    `).join('');
+
+    content.innerHTML = `
+        <div class="club-header">
+            <h1>${club.icon} ${club.name}</h1>
+            <p>${club.description}</p>
+        </div>
+
+        <!-- Rolling Photo Carousel Box with Dynamic Indicators -->
+        <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+                ${slidesHTML}
+            </div>
+            <div class="carousel-indicators" id="carouselIndicators">
+                ${indicatorsHTML}
+            </div>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-section">
+                <h2>About the Club</h2>
+                <p>${club.about}</p>
+                <h3 style="margin-top:20px; margin-bottom: 10px;">Typical Activities</h3>
+                <ul style="margin-left: 20px; line-height: 1.6; color: var(--text-muted);">
+                    ${activitiesHTML}
+                </ul>
+            </div>
+            
+            <div class="info-section">
+                <h2>Club Executives</h2>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 15px;">
+                    ${execsHTML}
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>Club Events</h2>
+            <div class="events-container">
+                <div>
+                    <h3 style="margin-bottom: 15px; color: var(--brand-red);">Upcoming Events</h3>
+                    <div id="club-upcoming-container" style="display: flex; flex-direction: column; gap: 15px;"></div>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 15px;">Previous Events</h3>
+                    <div id="club-past-container" style="display: flex; flex-direction: column; gap: 15px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="enroll-bar">
+            <button class="btn-primary" onclick="openModal('${club.id}', '${club.name}')">Enroll Now</button>
+        </div>
+    `;
+}
+
+function initAutoCarousel() {
+    const track = document.getElementById('carouselTrack');
+    const indicatorsContainer = document.getElementById('carouselIndicators');
+    if (!track || !indicatorsContainer) return;
+
+    const slides = track.querySelectorAll('.carousel-slide');
+    const dots = indicatorsContainer.querySelectorAll('.carousel-dot');
+    if (slides.length <= 1) return;
+
+    let currentSlide = 0;
+
+    function updateCarousel(index) {
+        currentSlide = index;
+        slides[currentSlide].scrollIntoView({
+            behavior: 'smooth',
+            inline: 'center',
+            block: 'nearest'
+        });
+
+        dots.forEach((dot, idx) => {
+            if (idx === currentSlide) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    dots.forEach((dot, idx) => {
+        dot.onclick = () => {
+            if (carouselInterval) clearInterval(carouselInterval);
+            updateCarousel(idx);
+            initAutoCarousel(); 
+        };
+    });
+
+    if (carouselInterval) clearInterval(carouselInterval);
+
+    carouselInterval = setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateCarousel(currentSlide);
+    }, 4000); 
+}
+
+function createClubEventCard(event, index) {
+    const card = document.createElement('div');
+    card.className = 'event-card scroll-reveal';
+    card.style.transitionDelay = `${index * 0.08}s`;
+
+    const statusClass = event.status ? event.status.toLowerCase() : 'upcoming';
+
+    card.innerHTML = `
+        <div class="card-inner">
+            <div class="card-header-row">
+                <span class="club-tag">${event.clubName}</span>
+                <span class="status-badge ${statusClass}">${event.status || 'Upcoming'}</span>
+            </div>
+            
+            <h3>${event.eventName}</h3>
+            
+            <div class="event-meta">
+                <span class="icon">🕒</span> ${event.date} @ ${event.time}
+            </div>
+            <div class="event-meta">
+                <span class="icon">📍</span> ${event.venue}
+            </div>
+            
+            <div class="card-footer">
+                <span>Read full details</span>
+                <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+            </div>
+        </div>
+    `;
+
+    card.onclick = () => openEventModal(event);
+    return card;
+}
+
+function updateEventBatches() {
+    const upcomingContainer = document.getElementById('club-upcoming-container');
+    const pastContainer = document.getElementById('club-past-container');
+    
+    if (!upcomingContainer || !pastContainer) return;
+
+    upcomingContainer.innerHTML = "";
+    pastContainer.innerHTML = "";
+
+    if (globalUpcoming.length > 0) {
+        for (let i = 0; i < Math.min(eventsPerPage, globalUpcoming.length); i++) {
+            const ev = globalUpcoming[(upcomingIndex + i) % globalUpcoming.length];
+            upcomingContainer.appendChild(createClubEventCard(ev, i));
+        }
+    } else {
+        upcomingContainer.innerHTML = '<p style="color:var(--text-muted); font-size:14px;">No upcoming events currently scheduled.</p>';
+    }
+
+    if (globalPast.length > 0) {
+        for (let i = 0; i < Math.min(eventsPerPage, globalPast.length); i++) {
+            const ev = globalPast[(pastIndex + i) % globalPast.length];
+            pastContainer.appendChild(createClubEventCard(ev, i));
+        }
+    } else {
+        pastContainer.innerHTML = '<p style="color:var(--text-muted); font-size:14px;">No past events recorded.</p>';
+    }
+
+    setTimeout(() => {
+        document.querySelectorAll('.club-details-container .scroll-reveal').forEach(el => el.classList.add('visible'));
+    }, 50);
+}
+
+function rotateClubEvents() {
+    const cards = document.querySelectorAll('.club-details-container .event-card');
+    
+    cards.forEach(card => {
+        card.classList.remove('visible');
+        card.classList.add('fade-out');
+    });
+
+    setTimeout(() => {
+        if (globalUpcoming.length > eventsPerPage) {
+            upcomingIndex = (upcomingIndex + eventsPerPage) % globalUpcoming.length;
+        }
+        if (globalPast.length > eventsPerPage) {
+            pastIndex = (pastIndex + eventsPerPage) % globalPast.length;
+        }
+        updateEventBatches();
+    }, 400);
+}
+
+function openEventModal(event) {
+    let modalOverlay = document.getElementById('eventModal');
+    if (!modalOverlay) {
+        modalOverlay = document.createElement('div');
+        modalOverlay.id = 'eventModal';
+        modalOverlay.className = 'modal-overlay';
+        modalOverlay.innerHTML = `
+            <div class="modal-content">
+                <button class="close-modal" onclick="closeEventModal()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+                </button>
+                <div class="modal-header-accent"></div>
+                <h2 id="modalTitle"></h2>
+                <div class="modal-meta" id="modalDetails"></div>
+                <div class="modal-body-scroll">
+                    <p id="modalDescription"></p>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modalOverlay);
+        
+        modalOverlay.onclick = (e) => {
+            if (e.target === modalOverlay) closeEventModal();
+        };
+    }
+
+    document.getElementById('modalTitle').textContent = event.eventName;
+    document.getElementById('modalDetails').innerHTML = `
+        <strong>${event.clubName}</strong> &nbsp;|&nbsp; 
+        <span style="color: ${event.status === 'Upcoming' ? '#166534' : '#4b5563'};">${event.status || 'Event'}</span> <br><br>
+        🕒 ${event.date} • ${event.time} <br> 📍 ${event.venue}
+    `;
+    document.getElementById('modalDescription').textContent = event.description;
+    
+    modalOverlay.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeEventModal() {
+    const modal = document.getElementById('eventModal');
+    if (modal) {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+}
+
+function openModal(clubId, clubName) {
+    const modal = document.getElementById('enroll-modal');
+    document.getElementById('enroll-club-id').value = clubId;
+    document.getElementById('modal-club-name-display').innerText = clubName;
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('enroll-modal').style.display = 'none';
+}
+
+function submitForm(event) {
+    event.preventDefault();
+    const clubId = document.getElementById('enroll-club-id').value;
+    const name = document.getElementById('student-name').value;
+    
+    alert(`Success! Application submitted for ${name} to join club ID: ${clubId}.`);
+    closeModal();
+    event.target.reset();
+}
+
+window.onclick = function(event) {
+    const enrollModal = document.getElementById('enroll-modal');
+    if (event.target === enrollModal) {
+        closeModal();
+    }
 }

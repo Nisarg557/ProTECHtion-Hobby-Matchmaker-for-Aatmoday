@@ -1,0 +1,63 @@
+/* =========================================
+   about.css (About Page Styling)
+========================================= */
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 20px 80px;
+}
+
+.about-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-soft);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.about-card h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.about-card p {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.about-card p:last-child {
+    margin-bottom: 0;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.feature-item {
+    background: var(--bg-main);
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--border-soft);
+}
+
+.feature-item h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.feature-item p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
