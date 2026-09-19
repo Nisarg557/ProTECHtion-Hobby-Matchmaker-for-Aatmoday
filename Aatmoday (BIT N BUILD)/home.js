@@ -1,16 +1,24 @@
+// home.js
+import { db, collection, getDocs } from './firebase.js';
+
 // --- Configuration ---
 let upcomingEvents = [];
 let pastEvents = [];
 let upcomingIndex = 0;
 let pastIndex = 0;
 const eventsPerRow = 3; 
-const rotationTime = 10000; // 10 seconds
+const rotationTime = 10000; 
 
 // --- Fetch and Initialize ---
 async function fetchAndStartEvents() {
     try {
-        const response = await fetch('event.json');
-        const allEvents = await response.json();
+        // Fetch events from Firebase instead of the local JSON
+        const querySnapshot = await getDocs(collection(db, "events"));
+        const allEvents = [];
+        
+        querySnapshot.forEach((doc) => {
+            allEvents.push(doc.data());
+        });
 
         // Separate events into Upcoming and Past
         upcomingEvents = allEvents.filter(event => event.status === 'Upcoming');
@@ -24,9 +32,9 @@ async function fetchAndStartEvents() {
         }
 
     } catch (error) {
-        console.error("Error loading events:", error);
+        console.error("Error loading events from Firebase:", error);
         document.getElementById('upcoming-container').innerHTML = 
-            "<p class='error-msg' style='color:red;'>Failed to load events. Ensure local server is running.</p>";
+            "<p class='error-msg' style='color:red;'>Failed to load events. Check console for details.</p>";
     }
 }
 
@@ -36,7 +44,7 @@ function createCardElement(event, index) {
     card.className = 'event-card scroll-reveal';
     card.style.transitionDelay = `${index * 0.08}s`;
 
-    const statusClass = event.status.toLowerCase();
+    const statusClass = event.status ? event.status.toLowerCase() : 'upcoming';
 
     card.innerHTML = `
         <div class="card-inner">
@@ -73,16 +81,22 @@ function renderEventBatch() {
     upcomingContainer.innerHTML = ""; 
     pastContainer.innerHTML = ""; 
 
-    // Render 3 Upcoming Events
-    for (let i = 0; i < Math.min(eventsPerRow, upcomingEvents.length); i++) {
-        const ev = upcomingEvents[(upcomingIndex + i) % upcomingEvents.length];
-        upcomingContainer.appendChild(createCardElement(ev, i));
+    if (upcomingEvents.length > 0) {
+        for (let i = 0; i < Math.min(eventsPerRow, upcomingEvents.length); i++) {
+            const ev = upcomingEvents[(upcomingIndex + i) % upcomingEvents.length];
+            upcomingContainer.appendChild(createCardElement(ev, i));
+        }
+    } else {
+        upcomingContainer.innerHTML = '<p style="color:#6b7280; font-size:14px; padding-left:10px;">No upcoming events.</p>';
     }
 
-    // Render 3 Past Events
-    for (let i = 0; i < Math.min(eventsPerRow, pastEvents.length); i++) {
-        const ev = pastEvents[(pastIndex + i) % pastEvents.length];
-        pastContainer.appendChild(createCardElement(ev, i));
+    if (pastEvents.length > 0) {
+        for (let i = 0; i < Math.min(eventsPerRow, pastEvents.length); i++) {
+            const ev = pastEvents[(pastIndex + i) % pastEvents.length];
+            pastContainer.appendChild(createCardElement(ev, i));
+        }
+    } else {
+        pastContainer.innerHTML = '<p style="color:#6b7280; font-size:14px; padding-left:10px;">No past events.</p>';
     }
 
     // Trigger fade-in instantly after appending
@@ -132,9 +146,12 @@ function closeModal() {
     document.body.style.overflow = '';
 }
 
+// Ensure closing by clicking the background overlay works
 window.onclick = function(event) {
     const modal = document.getElementById('eventModal');
     if (event.target === modal) closeModal();
 }
 
-window.onload = fetchAndStartEvents;
+// --- Bindings for Modules ---
+document.addEventListener('DOMContentLoaded', fetchAndStartEvents);
+window.closeModal = closeModal;

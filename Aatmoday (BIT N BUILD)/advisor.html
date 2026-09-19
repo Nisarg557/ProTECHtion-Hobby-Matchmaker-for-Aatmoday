@@ -49,19 +49,19 @@
                 <div class="question">
                     <label>2. Which of these best describes you? <span>*</span></label>
                     <div class="option-grid two-columns">
-                        <button type="button" class="option" data-group="aboutYou" data-value="new" onclick="selectOption(this, 'aboutYou')">
+                        <button type="button" class="option" data-group="aboutYou" data-value="new">
                             <span class="option-icon">🎓</span>
                             <span><strong>New to Aatmoday</strong><small>Looking to explore</small></span>
                         </button>
-                        <button type="button" class="option" data-group="aboutYou" data-value="friends" onclick="selectOption(this, 'aboutYou')">
+                        <button type="button" class="option" data-group="aboutYou" data-value="friends">
                             <span class="option-icon">👥</span>
                             <span><strong>Make new friends</strong><small>Meet like-minded students</small></span>
                         </button>
-                        <button type="button" class="option" data-group="aboutYou" data-value="learning" onclick="selectOption(this, 'aboutYou')">
+                        <button type="button" class="option" data-group="aboutYou" data-value="learning">
                             <span class="option-icon">💡</span>
                             <span><strong>Learn a new skill</strong><small>Grow and experiment</small></span>
                         </button>
-                        <button type="button" class="option" data-group="aboutYou" data-value="passions" onclick="selectOption(this, 'aboutYou')">
+                        <button type="button" class="option" data-group="aboutYou" data-value="passions">
                             <span class="option-icon">🚀</span>
                             <span><strong>Explore existing passions</strong><small>Go deeper into hobbies</small></span>
                         </button>
@@ -71,15 +71,15 @@
                 <div class="question">
                     <label>3. How much time can you usually give? <span>*</span></label>
                     <div class="option-grid three-columns">
-                        <button type="button" class="option compact" data-group="time" data-value="few" onclick="selectOption(this, 'time')">
+                        <button type="button" class="option compact" data-group="time" data-value="few">
                             <span class="option-icon">🕐</span>
                             <span><strong>A few hours</strong><small>per week</small></span>
                         </button>
-                        <button type="button" class="option compact" data-group="time" data-value="occasional" onclick="selectOption(this, 'time')">
+                        <button type="button" class="option compact" data-group="time" data-value="occasional">
                             <span class="option-icon">📅</span>
                             <span><strong>Occasional</strong><small>when possible</small></span>
                         </button>
-                        <button type="button" class="option compact" data-group="time" data-value="active" onclick="selectOption(this, 'time')">
+                        <button type="button" class="option compact" data-group="time" data-value="active">
                             <span class="option-icon">⚡</span>
                             <span><strong>Very active</strong><small>Can commit</small></span>
                         </button>
@@ -89,15 +89,15 @@
                 <div class="question">
                     <label>4. How do you prefer working on your interests? <span>*</span></label>
                     <div class="option-grid three-columns">
-                        <button type="button" class="option compact" data-group="social" data-value="alone" onclick="selectOption(this, 'social')">
+                        <button type="button" class="option compact" data-group="social" data-value="alone">
                             <span class="option-icon">👤</span>
                             <span><strong>Alone</strong><small>Independent</small></span>
                         </button>
-                        <button type="button" class="option compact" data-group="social" data-value="small" onclick="selectOption(this, 'social')">
+                        <button type="button" class="option compact" data-group="social" data-value="small">
                             <span class="option-icon">👥</span>
                             <span><strong>Small groups</strong><small>Close collaboration</small></span>
                         </button>
-                        <button type="button" class="option compact" data-group="social" data-value="large" onclick="selectOption(this, 'social')">
+                        <button type="button" class="option compact" data-group="social" data-value="large">
                             <span class="option-icon">👨‍👩‍👧‍👦</span>
                             <span><strong>Larger groups</strong><small>Social activities</small></span>
                         </button>
@@ -107,12 +107,12 @@
                 <div class="question">
                     <label>5. What do you hope to get from joining a club? <small>(Select up to 3)</small></label>
                     <div class="goal-options">
-                        <button type="button" class="goal" data-goal="skills" onclick="toggleGoal(this)">Learn new skills</button>
-                        <button type="button" class="goal" data-goal="people" onclick="toggleGoal(this)">Meet new people</button>
-                        <button type="button" class="goal" data-goal="portfolio" onclick="toggleGoal(this)">Build my portfolio</button>
-                        <button type="button" class="goal" data-goal="events" onclick="toggleGoal(this)">Participate in events</button>
-                        <button type="button" class="goal" data-goal="break" onclick="toggleGoal(this)">Take a break from academics</button>
-                        <button type="button" class="goal" data-goal="hobbies" onclick="toggleGoal(this)">Explore hobbies</button>
+                        <button type="button" class="goal" data-goal="skills">Learn new skills</button>
+                        <button type="button" class="goal" data-goal="people">Meet new people</button>
+                        <button type="button" class="goal" data-goal="portfolio">Build my portfolio</button>
+                        <button type="button" class="goal" data-goal="events">Participate in events</button>
+                        <button type="button" class="goal" data-goal="break">Take a break from academics</button>
+                        <button type="button" class="goal" data-goal="hobbies">Explore hobbies</button>
                     </div>
                 </div>
             </div>
@@ -122,7 +122,7 @@
                 <input type="text" id="additionalInterests" placeholder="E.g. music, travel, public speaking, volunteering, etc.">
             </div>
 
-            <button class="match-button" onclick="findMatches()">
+            <button class="match-button">
                 ✨ Find My Aatmoday Matches <span>→</span>
             </button>
 
@@ -187,6 +187,6 @@
         Aatmoday — University Hobby Club Council <span>|</span> Discover your interests. Find your community.
     </footer>
 
-    <script src="advisor.js"></script>
+    <script type="module" src="advisor.js"></script>
 </body>
 </html>

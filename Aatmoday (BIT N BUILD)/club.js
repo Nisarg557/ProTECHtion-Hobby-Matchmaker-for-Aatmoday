@@ -1,4 +1,5 @@
-// club.js
+import { db, collection, getDocs, addDoc } from './firebase.js';
+
 let globalUpcoming = [];
 let globalPast = [];
 let upcomingIndex = 0;
@@ -20,14 +21,19 @@ async function initializeClubPage() {
     }
 
     try {
-        const [clubsResponse, eventsResponse] = await Promise.all([
-            fetch('club.json'),
-            fetch('event.json')
+        // Fetch both collections from Firebase at the same time
+        const [clubsSnapshot, eventsSnapshot] = await Promise.all([
+            getDocs(collection(db, "clubs")),
+            getDocs(collection(db, "events"))
         ]);
         
-        const clubsData = await clubsResponse.json();
-        const eventsData = await eventsResponse.json();
+        const clubsData = [];
+        clubsSnapshot.forEach(doc => clubsData.push(doc.data()));
 
+        const eventsData = [];
+        eventsSnapshot.forEach(doc => eventsData.push(doc.data()));
+
+        // Find the specific club matching the URL ID
         const clubInfo = clubsData.find(c => c.id === clubId);
 
         if (!clubInfo) {
@@ -35,9 +41,11 @@ async function initializeClubPage() {
             return;
         }
 
+        // Filter events for this specific club
         globalUpcoming = eventsData.filter(e => e.clubName === clubInfo.name && e.status === "Upcoming");
         globalPast = eventsData.filter(e => e.clubName === clubInfo.name && e.status === "Past");
 
+        // Fallback placeholder events if none are found in the database yet
         if (globalUpcoming.length === 0 && globalPast.length === 0) {
             globalUpcoming = [
                 {
@@ -73,11 +81,11 @@ async function initializeClubPage() {
         }
 
     } catch (error) {
-        console.error("Error loading data:", error);
+        console.error("Error loading data from Firebase:", error);
         document.getElementById('club-content').innerHTML = `
             <div style="text-align: center; color: var(--brand-red); padding: 40px;">
                 <h2>Error Loading Data</h2>
-                <p>Ensure you are running a local server (e.g., Live Server) and that data files exist.</p>
+                <p>Check the console for Firebase errors.</p>
             </div>
         `;
     }
@@ -115,7 +123,7 @@ function renderClubPage(club) {
         </div>
 
         <!-- Rolling Photo Carousel Box with Dynamic Indicators -->
-        <div class="carousel-container">
+        <div class="carousel-container" style="position: relative;">
             <div class="carousel-track" id="carouselTrack">
                 ${slidesHTML}
             </div>
@@ -175,10 +183,11 @@ function initAutoCarousel() {
 
     function updateCarousel(index) {
         currentSlide = index;
-        slides[currentSlide].scrollIntoView({
-            behavior: 'smooth',
-            inline: 'center',
-            block: 'nearest'
+        
+        // This targets ONLY the horizontal scroll of the track, preventing page jumps
+        track.scrollTo({
+            left: slides[currentSlide].offsetLeft,
+            behavior: 'smooth'
         });
 
         dots.forEach((dot, idx) => {
@@ -348,19 +357,71 @@ function closeModal() {
     document.getElementById('enroll-modal').style.display = 'none';
 }
 
-function submitForm(event) {
+async function submitForm(event) {
     event.preventDefault();
-    const clubId = document.getElementById('enroll-club-id').value;
-    const name = document.getElementById('student-name').value;
     
-    alert(`Success! Application submitted for ${name} to join club ID: ${clubId}.`);
-    closeModal();
-    event.target.reset();
+    const submitBtn = event.target.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerText;
+    submitBtn.innerText = "Sending Request...";
+    submitBtn.disabled = true;
+
+    try {
+        const clubId = document.getElementById('enroll-club-id').value;
+        const clubName = document.getElementById('modal-club-name-display').innerText;
+        const studentName = document.getElementById('student-name').value;
+        const studentEmail = document.getElementById('student-email').value;
+        const studentDept = document.getElementById('student-dept').value;
+        
+        const enrollmentRequest = {
+            clubId: clubId,
+            clubName: clubName,
+            studentName: studentName,
+            studentEmail: studentEmail,
+            studentDepartment: studentDept,
+            status: "Pending",
+            timestamp: new Date().toISOString()
+        };
+
+        // Writes directly to your new "requests" collection
+        await addDoc(collection(db, "requests"), enrollmentRequest);
+        
+        // Close the form and clear it
+        closeModal();
+        event.target.reset();
+        
+        // Trigger the new Success Modal instead of the alert
+        document.getElementById('success-modal').style.display = 'block';
+
+    } catch (error) {
+        console.error("Error submitting enrollment: ", error);
+        alert("Failed to send request. Please check your connection and try again.");
+    } finally {
+        submitBtn.innerText = originalText;
+        submitBtn.disabled = false;
+    }
 }
 
+// Function to close the success modal
+function closeSuccessModal() {
+    document.getElementById('success-modal').style.display = 'none';
+}
+
+// Attach these to the global window object
+window.openModal = openModal;
+window.closeModal = closeModal;
+window.submitForm = submitForm;
+window.closeEventModal = closeEventModal;
+window.closeSuccessModal = closeSuccessModal; 
+
+// Ensure clicking the background closes whichever modal is open
 window.onclick = function(event) {
     const enrollModal = document.getElementById('enroll-modal');
+    const successModal = document.getElementById('success-modal');
+    
     if (event.target === enrollModal) {
         closeModal();
+    }
+    if (event.target === successModal) {
+        closeSuccessModal();
     }
 }

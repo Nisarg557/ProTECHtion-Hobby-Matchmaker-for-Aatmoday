@@ -19,7 +19,7 @@ body {
 }
 
 /* =====================================================
-     NAVBAR
+    NAVBAR
 ===================================================== */
 .navbar {
     background-color: rgba(255, 255, 255, 0.85);
@@ -108,7 +108,7 @@ body {
 }
 
 /* =====================================================
-     LAYOUT ADJUSTMENTS
+    LAYOUT ADJUSTMENTS
 ===================================================== */
 .page-wrapper {
     max-width: 1500px;
@@ -465,7 +465,6 @@ textarea::placeholder, input::placeholder {
     transform: translateY(-1px) scale(0.98);
 }
 
-/* Shine effect on the button */
 .match-button::after {
     content: '';
     position: absolute;
@@ -526,7 +525,6 @@ textarea::placeholder, input::placeholder {
     padding: 65px 20px;
     background: #f8f9fa;
     border-top: 1px solid #e7e9ec;
-    /* Add a smooth reveal animation */
     animation: fadeInReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -574,45 +572,6 @@ textarea::placeholder, input::placeholder {
     margin-top: 5px;
     color: #667085;
     font-size: 13px;
-}
-
-.interest-profile {
-    padding: 24px;
-    margin-bottom: 30px;
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-}
-
-.interest-profile:hover {
-    transform: translateY(-2px);
-}
-
-.interest-profile h3 {
-    margin-bottom: 16px;
-    font-size: 15px;
-}
-
-.interest-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.interest-tag {
-    padding: 9px 15px;
-    border-radius: 22px;
-    background: #fff0f3;
-    color: #e5002b;
-    font-size: 12px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.interest-tag:hover {
-    background: #ffe0e6;
-    transform: scale(1.05);
 }
 
 .results-container {
@@ -692,37 +651,17 @@ textarea::placeholder, input::placeholder {
     font-size: 8px;
 }
 
-.matched-interests {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-    margin-bottom: 17px;
-}
-
-.matched-interest {
-    padding: 7px 10px;
-    background: #fff0f3;
-    color: #e5002b;
-    border-radius: 18px;
-    font-size: 10px;
-    transition: background 0.2s ease;
-}
-
-.matched-interest:hover {
-    background: #ffe0e6;
-}
-
 .why-match {
     min-height: 88px;
     margin-bottom: 15px;
 }
 
-.why-match h4, .related-event h4, .icebreaker h4 {
+.why-match h4, .related-event h4 {
     margin-bottom: 7px;
     font-size: 11px;
 }
 
-.why-match p, .related-event p, .icebreaker p {
+.why-match p, .related-event p {
     color: #667085;
     font-size: 11px;
     line-height: 1.65;
@@ -742,13 +681,6 @@ textarea::placeholder, input::placeholder {
 
 .related-event h4 {
     color: #18233b;
-}
-
-.icebreaker {
-    padding: 13px;
-    margin-bottom: 15px;
-    background: #fff2f5;
-    border-radius: 10px;
 }
 
 .learn-more {
@@ -771,7 +703,7 @@ textarea::placeholder, input::placeholder {
 
 .learn-more:hover {
     background: #c90026;
-    gap: 18px; /* Animates the arrow sliding to the right */
+    gap: 18px;
 }
 
 .learn-more span {
@@ -804,11 +736,7 @@ textarea::placeholder, input::placeholder {
     background: #fff0f3;
     transform: translateY(-3px);
     box-shadow: 0 8px 15px rgba(229, 0, 43, 0.1);
-    gap: 20px; /* Slides the arrow outward */
-}
-
-.browse-button:active {
-    transform: translateY(0);
+    gap: 20px;
 }
 
 .browse-button span {
@@ -831,9 +759,6 @@ footer span {
 @media (max-width: 1200px) {
     .page-wrapper {
         grid-template-columns: 180px minmax(600px, 850px) 180px;
-    }
-    .nav-tagline {
-        display: none;
     }
 }
 

@@ -1,46 +1,6 @@
-const interestConcepts = {
-    photography: { label: "Photography", aliases: ["photo", "photos", "photograph", "photographs", "photography", "camera", "cameras", "photographer", "photographers", "dslr"] },
-    creativity: { label: "Creativity", aliases: ["creative", "creativity", "creative work", "creative content", "artistic", "art", "arts"] },
-    visualStorytelling: { label: "Visual Storytelling", aliases: ["visual storytelling", "visual story", "visual content"] },
-    video: { label: "Video & Content", aliases: ["video", "videos", "videography", "editing", "video editing", "content creation", "content"] },
-    coding: { label: "Coding & Programming", aliases: ["code", "coding", "programming", "programmer", "developer", "development", "software", "software development", "web development", "app development"] },
-    technology: { label: "Technology", aliases: ["technology", "tech", "computer", "computers", "digital"] },
-    robotics: { label: "Robotics", aliases: ["robot", "robots", "robotics", "arduino", "electronics", "hardware"] },
-    artificialIntelligence: { label: "Artificial Intelligence", aliases: ["ai", "artificial intelligence", "machine learning", "ml", "deep learning"] },
-    reading: { label: "Reading", aliases: ["read", "reading", "book", "books", "novel", "novels"] },
-    writing: { label: "Writing", aliases: ["write", "writing", "writer", "writers", "story", "stories", "creative writing"] },
-    poetry: { label: "Poetry", aliases: ["poetry", "poem", "poems"] },
-    literature: { label: "Literature", aliases: ["literature", "literary", "literary work"] },
-    debate: { label: "Debate & Discussion", aliases: ["debate", "debating", "discussion", "discussions", "public speaking", "speaking"] },
-    fitness: { label: "Fitness", aliases: ["fitness", "fit", "exercise", "workout", "workouts", "training", "physical fitness"] },
-    sports: { label: "Sports", aliases: ["sport", "sports", "athletics", "athletic", "running", "run", "football", "cricket", "basketball", "badminton"] },
-    yoga: { label: "Yoga & Wellness", aliases: ["yoga", "meditation", "wellness", "mindfulness"] },
-    cooking: { label: "Cooking", aliases: ["cook", "cooking", "food", "foods", "recipe", "recipes", "kitchen", "culinary", "chef"] },
-    baking: { label: "Baking", aliases: ["baking", "bake", "cakes", "cake", "pastry", "desserts"] },
-    gardening: { label: "Gardening", aliases: ["garden", "gardening", "gardener", "plant", "plants", "planting"] },
-    nature: { label: "Nature", aliases: ["nature", "natural", "outdoor", "outdoors", "environment", "environmental", "green"] },
-    sustainability: { label: "Sustainability", aliases: ["sustainability", "sustainable", "eco friendly", "eco-friendly", "recycling", "conservation"] },
-    culture: { label: "Culture", aliases: ["culture", "cultural", "tradition", "traditional", "festival", "festivals"] },
-    music: { label: "Music", aliases: ["music", "musical", "singing", "song", "songs", "instrument", "instruments", "guitar", "piano"] },
-    dance: { label: "Dance", aliases: ["dance", "dancing", "choreography"] },
-    performance: { label: "Performance", aliases: ["performance", "performing", "acting", "theatre", "theater", "stage"] }
-};
-
-// Map club IDs to matching concepts since this data isn't in club.json
-const clubConceptsMapping = {
-    "photography": ["photography", "creativity", "visualStorytelling", "video"],
-    "coding": ["coding", "technology", "robotics", "artificialIntelligence"],
-    "cultural": ["culture", "creativity", "music", "dance", "performance"],
-    "literary": ["reading", "writing", "poetry", "literature", "debate"],
-    "fitness": ["fitness", "sports", "yoga"],
-    "cooking": ["cooking", "baking"],
-    "gardening": ["gardening", "nature", "sustainability"],
-    "music": ["music", "performance", "creativity"],
-    "art": ["creativity", "visualStorytelling", "technology"],
-    "astronomy": ["technology", "nature", "photography"],
-    "cinema": ["video", "visualStorytelling", "performance", "creativity"],
-    "business": ["debate", "technology", "reading"]
-};
+// advisor.js
+import { db, collection, getDocs } from './firebase.js';
+import { GROQ_API_KEY } from './config.js';
 
 let clubs = [];
 let userSelections = {
@@ -50,39 +10,45 @@ let userSelections = {
     goals: []
 };
 
-// Fetch data from JSON files and initialize clubs array
+// --- Fetch Live Firebase Data ---
 async function loadData() {
     try {
-        const [clubsResponse, eventsResponse] = await Promise.all([
-            fetch('club.json'),
-            fetch('event.json')
+        const [clubsSnapshot, eventsSnapshot] = await Promise.all([
+            getDocs(collection(db, "clubs")),
+            getDocs(collection(db, "events"))
         ]);
 
-        const clubsData = await clubsResponse.json();
-        const eventsData = await eventsResponse.json();
+        const clubsData = [];
+        clubsSnapshot.forEach(doc => clubsData.push({ id: doc.id, ...doc.data() }));
+
+        const eventsData = [];
+        eventsSnapshot.forEach(doc => eventsData.push(doc.data()));
 
         clubs = clubsData.map(club => {
-            // Find the most relevant upcoming event for this club
-            const clubEvents = eventsData.filter(e => e.clubName === club.name);
+            const clubName = club.name || club.title || "Unnamed Club";
+            const clubDesc = club.description || club.desc || "";
+            const clubEvents = eventsData.filter(e => e.clubName === clubName || e.clubId === club.id);
             const upcomingEvent = clubEvents.find(e => e.status === "Upcoming");
             
-            // Fallback to a past event if no upcoming events exist, or a default string
             const displayEvent = upcomingEvent 
                 ? `${upcomingEvent.eventName} (${upcomingEvent.date})` 
                 : (clubEvents.length > 0 ? clubEvents[0].eventName : "Stay tuned for upcoming activities!");
 
             return {
-                ...club,
-                concepts: clubConceptsMapping[club.id] || [],
+                id: club.id,
+                name: clubName,
+                description: clubDesc,
+                icon: club.icon || '🎯',
                 event: displayEvent
             };
         });
-        console.log("Data successfully loaded from JSON files.");
+        console.log("Firebase data loaded for AI matching.");
     } catch (error) {
-        console.error("Error loading JSON data:", error);
+        console.error("Error loading Firebase data:", error);
     }
 }
 
+// --- UI Button Interactions ---
 function selectOption(button, group) {
     const buttons = document.querySelectorAll(`[data-group="${group}"]`);
     buttons.forEach(btn => btn.classList.remove("selected"));
@@ -107,31 +73,8 @@ function toggleGoal(button) {
     userSelections.goals.push(goal);
 }
 
-function normalizeText(text) {
-    return text.toLowerCase().replace(/[^\w\s-]/g, " ").replace(/\s+/g, " ").trim();
-}
-
-function containsTerm(text, term) {
-    const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const regex = new RegExp(`(^|\\s)${escaped}(?=\\s|$)`, "i");
-    return regex.test(text);
-}
-
-function detectConcepts(text) {
-    const normalized = normalizeText(text);
-    const detected = [];
-    
-    Object.entries(interestConcepts).forEach(([conceptId, concept]) => {
-        const matched = concept.aliases.some(alias => containsTerm(normalized, normalizeText(alias)));
-        if (matched) {
-            detected.push(conceptId);
-        }
-    });
-    
-    return detected;
-}
-
-function findMatches() {
+// --- Advanced AI Matchmaking Logic ---
+async function findMatches() {
     if (clubs.length === 0) {
         alert("Data is still loading. Please try again in a moment.");
         return;
@@ -141,149 +84,168 @@ function findMatches() {
     const additional = document.getElementById("additionalInterests").value.trim();
     
     if (interestInput.length < 10) {
-        alert("Please tell us a little more about your interests.");
-        return;
-    }
-    if (!userSelections.aboutYou) {
-        alert("Please select which option best describes you.");
-        return;
-    }
-    if (!userSelections.time) {
-        alert("Please select how much time you can usually give.");
-        return;
-    }
-    if (!userSelections.social) {
-        alert("Please select how you prefer working on your interests.");
+        alert("Please describe your interests a bit more so our AI can find a great match.");
         return;
     }
 
-    const fullText = `${interestInput} ${additional}`;
-    const detectedConcepts = detectConcepts(fullText);
+    const userProfile = `
+        Free-form interest: "${interestInput}"
+        Additional info: "${additional}"
+        Personality: ${userSelections.aboutYou || "Not specified"}
+        Time commitment: ${userSelections.time || "Not specified"}
+        Social preference: ${userSelections.social || "Not specified"}
+        Goals: ${userSelections.goals.join(", ") || "Not specified"}
+    `;
+
     const loading = document.getElementById("loadingBox");
-    
     loading.style.display = "block";
+    document.getElementById("resultsSection").style.display = "none";
 
-    setTimeout(() => {
-        const results = clubs.map(club => scoreClub(club, detectedConcepts));
-        results.sort((a, b) => b.score - a.score);
+    try {
+        const prompt = `
+            You are an elite, highly precise AI Matchmaker for the Aatmoday student festival. 
+            Analyze the user's profile against the available clubs.
+
+            AVAILABLE CLUBS DATABASE:
+            ${JSON.stringify(clubs)}
+
+            USER PROFILE INPUTS:
+            ${userProfile}
+
+            STRICT RULES:
+            1. RELEVANCE THRESHOLD: A club must share at least 50% overlap with the user's core interest.
+            2. SUCCESS: Return a minimum of 3 relevant club matches if possible (or all available). Set status to "success".
+            3. PARTIAL: If adjacent, return max 2 clubs, set status to "partial", and write a 'global_note'.
+            4. NONE: If completely out of scope, return 0 matches, set status to "none".
+            5. ICEBREAKER (CRITICAL): Every single match MUST include a precise, highly creative icebreaker question. The icebreaker MUST weave in the user's exact vocabulary, creative elements (like canvas, photos, website building, or coding), or specific words from their input text. Never leave it empty or generic.
+
+            MANDATORY JSON OUTPUT SCHEMA:
+            Return ONLY a raw JSON object with no markdown formatting. Follow this exact structure:
+            {
+                "status": "success" | "partial" | "none",
+                "global_note": "Contextual message if partial or none. Empty string if success.",
+                "matches": [
+                    {
+                        "id": "exact_club_id_from_database",
+                        "percentage": 85,
+                        "reason": "Precise, 1-sentence explanation of the alignment.",
+                        "icebreaker": "Your custom conversational icebreaker utilizing their exact words here..."
+                    }
+                ]
+            }
+        `;
+
+        const response = await fetch(`https://api.groq.com/openai/v1/chat/completions`, {
+            method: "POST",
+            headers: { 
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${GROQ_API_KEY}`
+            },
+            body: JSON.stringify({
+                model: "openai/gpt-oss-20b",
+                messages: [{ role: "user", content: prompt }],
+                response_format: { type: "json_object" }
+            })
+        });
+
+        const data = await response.json();
         
-        const topMatches = results.slice(0, 3);
-        
-        displayInterestProfile(detectedConcepts);
-        displayResults(topMatches);
+        if (!response.ok) {
+            console.error("Groq API rejected request:", data);
+            alert(`API Error: ${data.error?.message || "Unknown error"}. Check console.`);
+            loading.style.display = "none";
+            return;
+        }
+
+        const aiResponseText = data.choices[0].message.content;
+        const aiData = JSON.parse(aiResponseText);
+
+        const finalMatches = (aiData.matches || []).map(aiMatch => {
+            const fullClubInfo = clubs.find(c => c.id === aiMatch.id);
+            if(!fullClubInfo) return null;
+            return {
+                ...fullClubInfo,
+                score: aiMatch.percentage || 75,
+                reason: aiMatch.reason || "Matched based on your profile interests.",
+                icebreaker: aiMatch.icebreaker || "Hey! Saw your profile—how do you plan to showcase your projects?"
+            };
+        }).filter(match => match !== null);
+
+        displayResults(aiData.status, aiData.global_note, finalMatches);
         
         loading.style.display = "none";
-        
         const resultsSection = document.getElementById("resultsSection");
         resultsSection.style.display = "block";
         resultsSection.scrollIntoView({ behavior: "smooth" });
-    }, 900);
+
+    } catch (error) {
+        console.error("AI Matchmaking Error:", error);
+        alert("Our AI is currently taking a break. Please try again in a moment.");
+        loading.style.display = "none";
+    }
 }
 
-function scoreClub(club, detectedConcepts) {
-    let score = 0;
-    const matchedConcepts = [];
+// --- Render UI ---
+function displayResults(status, globalNote, matches) {
+    const container = document.getElementById("resultsContainer");
+    const summary = document.getElementById("resultsSummary");
+    container.innerHTML = "";
     
-    club.concepts.forEach(conceptId => {
-        if (detectedConcepts.includes(conceptId)) {
-            score += 10;
-            matchedConcepts.push(conceptId);
-        }
-    });
-    
-    if (userSelections.social === "small") score += 2;
-    if (userSelections.social === "large") score += 3;
-    
-    userSelections.goals.forEach(goal => {
-        if (goal === "skills") score += 2;
-        if (goal === "people") score += 2;
-        if (goal === "events") score += 2;
-        if (goal === "hobbies") score += 2;
-        if (goal === "portfolio") {
-            if (club.id === "coding" || club.id === "photography" || club.id === "literary") {
-                score += 3;
-            }
-        }
-    });
-    
-    if (userSelections.time === "active") score += 2;
-
-    return {
-        ...club,
-        score,
-        matchedConcepts
-    };
-}
-
-function displayInterestProfile(conceptIds) {
-    const container = document.getElementById("interestProfile");
-    const labels = conceptIds.map(id => interestConcepts[id].label);
-    
-    if (labels.length === 0) {
+    if (status === "none" || matches.length === 0) {
+        summary.innerHTML = `<strong style="color: var(--brand-red);">No exact matches found.</strong>`;
         container.innerHTML = `
-            <h3>🧠 What we understood from you</h3>
-            <p style="color:#667085; font-size:12px;">
-                We couldn't identify specific hobby keywords, 
-                so your preferences will be used to explore suitable communities.
-            </p>
+            <div style="background: #fef2f2; border: 1px solid #fecaca; padding: 20px; border-radius: 12px; text-align: center; grid-column: 1 / -1;">
+                <h3 style="color: #991b1b; margin-bottom: 10px;">Exploring New Horizons</h3>
+                <p style="color: #7f1d1d; font-size: 15px; line-height: 1.6;">${globalNote || "We don't currently have a club that fits this specific interest."}</p>
+            </div>
         `;
         return;
     }
-    
-    container.innerHTML = `
-        <h3>🧠 What we understood from you</h3>
-        <div class="interest-tags">
-            ${labels.map(label => `<span class="interest-tag">${label}</span>`).join("")}
-        </div>
-    `;
-}
 
-function displayResults(matches) {
-    const container = document.getElementById("resultsContainer");
-    container.innerHTML = "";
-    document.getElementById("resultsSummary").textContent = "These recommendations are based on your interests, preferences and goals.";
-    
-    const highestScore = Math.max(...matches.map(club => club.score));
+    if (status === "partial") {
+        summary.innerHTML = `<strong style="color: #d97706;">Alternative Recommendations:</strong> We found some adjacent communities that might interest you.`;
+        
+        const noteBox = document.createElement("div");
+        noteBox.style = "background: #fffbeb; border: 1px solid #fde68a; padding: 16px 20px; border-radius: 12px; margin-bottom: 24px; grid-column: 1 / -1;";
+        noteBox.innerHTML = `
+            <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <span style="font-size: 20px;">💡</span>
+                <p style="color: #92400e; margin: 0; font-size: 14.5px; line-height: 1.5;">${globalNote}</p>
+            </div>
+        `;
+        container.appendChild(noteBox);
+    } else {
+        summary.textContent = "Our AI analyzed your exact words to find your perfect communities.";
+    }
     
     matches.forEach(club => {
-        let percentage;
-        if (highestScore <= 0) {
-            percentage = 55;
-        } else {
-            percentage = Math.round(60 + (club.score / highestScore) * 35);
-        }
-        
-        percentage = Math.min(98, Math.max(55, percentage));
-        
-        const matchedLabels = club.matchedConcepts.map(conceptId => interestConcepts[conceptId].label).slice(0, 3);
-        const tagsHTML = matchedLabels.length > 0
-            ? matchedLabels.map(label => `<span class="matched-interest">${label}</span>`).join("")
-            : `<span class="matched-interest">Preference Match</span>`;
-            
         const card = document.createElement("div");
         card.className = "result-card";
-        
         const clubURL = `club.html?id=${encodeURIComponent(club.id)}`;
         
         card.innerHTML = `
             <div class="card-header">
                 <div class="club-title">
-                    <div class="club-icon">${club.icon}</div>
+                    <div class="club-icon">${club.icon || '🎯'}</div>
                     <h3>${club.name}</h3>
                 </div>
                 <div class="match-score">
-                    ${percentage}%<br><small>Match</small>
+                    ${club.score}%<br><small>Match</small>
                 </div>
             </div>
-            <div class="matched-interests">
-                ${tagsHTML}
-            </div>
+            
             <div class="why-match">
-                <h4>About this match</h4>
-                <p>${club.description}</p>
+                <h4>Why we picked this for you</h4>
+                <p>${club.reason}</p>
             </div>
+            
+            <div class="icebreaker-box" style="background: rgba(217, 4, 41, 0.05); border-left: 3px solid var(--brand-red); padding: 12px 16px; margin: 15px 0; border-radius: 4px;">
+                <h4 style="margin: 0 0 6px 0; color: var(--brand-red); font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">💬 Suggested Icebreaker</h4>
+                <p style="margin: 0; font-style: italic; color: var(--text-dark); font-size: 14px;">"${club.icebreaker}"</p>
+            </div>
+
             <div class="related-event">
-                <h4>📅 Related Aatmoday Activity</h4>
+                <h4>📅 Next Activity</h4>
                 <p>${club.event}</p>
             </div>
             <a href="${clubURL}" class="learn-more">
@@ -295,7 +257,28 @@ function displayResults(matches) {
     });
 }
 
+// --- Event Listeners Initialization ---
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Aatmoday Matchmaker loaded.");
     loadData();
+
+    document.querySelectorAll(".option-grid .option").forEach(button => {
+        button.addEventListener("click", () => {
+            const group = button.getAttribute("data-group");
+            selectOption(button, group);
+        });
+    });
+
+    document.querySelectorAll(".goal-options .goal").forEach(button => {
+        button.addEventListener("click", () => {
+            toggleGoal(button);
+        });
+    });
+
+    const matchBtn = document.querySelector(".match-button");
+    if (matchBtn) {
+        matchBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            findMatches();
+        });
+    }
 });
