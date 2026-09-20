@@ -380,3 +380,33 @@
 .form-group input {
     width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;
 }
+/* Enrollment form - new textarea fields */
+#enroll-form textarea {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: var(--text-dark);
+    background: #fff;
+    box-sizing: border-box;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#enroll-form textarea:focus {
+    border-color: var(--brand-red);
+    box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.08);
+}
+
+#enroll-form textarea::placeholder {
+    color: #777;
+    opacity: 1;
+}
+/* Center enrollment modal */
+#enroll-modal {
+    align-items: center;
+    justify-content: center;
+}
