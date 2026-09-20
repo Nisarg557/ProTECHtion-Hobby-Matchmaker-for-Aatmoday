@@ -776,11 +776,11 @@ async function submitForm(event) {
         event.target.reset();
 
 
-        // Trigger the Success Modal
-        document.getElementById(
-            'success-modal'
-        ).style.display =
-            'block';
+        const successModal = document.getElementById('success-modal');
+
+        successModal.style.display = 'flex';
+        successModal.style.alignItems = 'center';
+        successModal.style.justifyContent = 'center';
 
 
     } catch (error) {
