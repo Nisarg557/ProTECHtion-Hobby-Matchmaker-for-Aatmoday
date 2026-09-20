@@ -4,8 +4,8 @@ let globalUpcoming = [];
 let globalPast = [];
 let upcomingIndex = 0;
 let pastIndex = 0;
-const eventsPerPage = 2; 
-const rotationTime = 5000; 
+const eventsPerPage = 2;
+const rotationTime = 5000;
 let rotationInterval = null;
 let carouselInterval = null;
 
@@ -26,7 +26,7 @@ async function initializeClubPage() {
             getDocs(collection(db, "clubs")),
             getDocs(collection(db, "events"))
         ]);
-        
+
         const clubsData = [];
         clubsSnapshot.forEach(doc => clubsData.push(doc.data()));
 
@@ -42,8 +42,13 @@ async function initializeClubPage() {
         }
 
         // Filter events for this specific club
-        globalUpcoming = eventsData.filter(e => e.clubName === clubInfo.name && e.status === "Upcoming");
-        globalPast = eventsData.filter(e => e.clubName === clubInfo.name && e.status === "Past");
+        globalUpcoming = eventsData.filter(
+            e => e.clubName === clubInfo.name && e.status === "Upcoming"
+        );
+
+        globalPast = eventsData.filter(
+            e => e.clubName === clubInfo.name && e.status === "Past"
+        );
 
         // Fallback placeholder events if none are found in the database yet
         if (globalUpcoming.length === 0 && globalPast.length === 0) {
@@ -58,6 +63,7 @@ async function initializeClubPage() {
                     description: `Join us for our introductory session and get to know what ${clubInfo.name} has planned for the semester.`
                 }
             ];
+
             globalPast = [
                 {
                     eventName: `Orientation & Introductory Workshop`,
@@ -75,13 +81,21 @@ async function initializeClubPage() {
         updateEventBatches();
         initAutoCarousel();
 
-        if (globalUpcoming.length > eventsPerPage || globalPast.length > eventsPerPage) {
+        if (
+            globalUpcoming.length > eventsPerPage ||
+            globalPast.length > eventsPerPage
+        ) {
             if (rotationInterval) clearInterval(rotationInterval);
-            rotationInterval = setInterval(rotateClubEvents, rotationTime);
+
+            rotationInterval = setInterval(
+                rotateClubEvents,
+                rotationTime
+            );
         }
 
     } catch (error) {
         console.error("Error loading data from Firebase:", error);
+
         document.getElementById('club-content').innerHTML = `
             <div style="text-align: center; color: var(--brand-red); padding: 40px;">
                 <h2>Error Loading Data</h2>
@@ -91,30 +105,48 @@ async function initializeClubPage() {
     }
 }
 
+
 function renderClubPage(club) {
     const content = document.getElementById('club-content');
-    
-    const execsHTML = club.executives.map(exec => 
+
+    const execsHTML = club.executives.map(exec =>
         `<li><strong>${exec.name}</strong> - ${exec.designation}<br>
         <small>${exec.department} | ${exec.contact}</small></li>`
     ).join('');
 
-    const activitiesHTML = club.activities.map(act => `<li>${act}</li>`).join('');
+    const activitiesHTML = club.activities.map(
+        act => `<li>${act}</li>`
+    ).join('');
 
     // Use club specific images from json or fallback if missing
-    const clubImages = club.images && club.images.length > 0 ? club.images : [
-        `https://picsum.photos/seed/${club.id}1/1000/400`,
-        `https://picsum.photos/seed/${club.id}2/1000/400`,
-        `https://picsum.photos/seed/${club.id}3/1000/400`
-    ];
+    const clubImages =
+        club.images && club.images.length > 0
+            ? club.images
+            : [
+                `https://picsum.photos/seed/${club.id}1/1000/400`,
+                `https://picsum.photos/seed/${club.id}2/1000/400`,
+                `https://picsum.photos/seed/${club.id}3/1000/400`
+            ];
 
-    const slidesHTML = clubImages.map((imgSrc, index) => `
-        <div class="carousel-slide"><img src="${imgSrc}" alt="${club.name} Activity ${index + 1}"></div>
-    `).join('');
+    const slidesHTML = clubImages.map(
+        (imgSrc, index) => `
+            <div class="carousel-slide">
+                <img
+                    src="${imgSrc}"
+                    alt="${club.name} Activity ${index + 1}"
+                >
+            </div>
+        `
+    ).join('');
 
-    const indicatorsHTML = clubImages.map((_, index) => `
-        <span class="carousel-dot ${index === 0 ? 'active' : ''}" data-index="${index}"></span>
-    `).join('');
+    const indicatorsHTML = clubImages.map(
+        (_, index) => `
+            <span
+                class="carousel-dot ${index === 0 ? 'active' : ''}"
+                data-index="${index}"
+            ></span>
+        `
+    ).join('');
 
     content.innerHTML = `
         <div class="club-header">
@@ -127,64 +159,106 @@ function renderClubPage(club) {
             <div class="carousel-track" id="carouselTrack">
                 ${slidesHTML}
             </div>
+
             <div class="carousel-indicators" id="carouselIndicators">
                 ${indicatorsHTML}
             </div>
         </div>
 
         <div class="info-grid">
+
             <div class="info-section">
                 <h2>About the Club</h2>
+
                 <p>${club.about}</p>
-                <h3 style="margin-top:20px; margin-bottom: 10px;">Typical Activities</h3>
+
+                <h3 style="margin-top:20px; margin-bottom: 10px;">
+                    Typical Activities
+                </h3>
+
                 <ul style="margin-left: 20px; line-height: 1.6; color: var(--text-muted);">
                     ${activitiesHTML}
                 </ul>
             </div>
-            
+
             <div class="info-section">
                 <h2>Club Executives</h2>
+
                 <ul style="list-style: none; display: flex; flex-direction: column; gap: 15px;">
                     ${execsHTML}
                 </ul>
             </div>
+
         </div>
 
         <div class="info-section">
+
             <h2>Club Events</h2>
+
             <div class="events-container">
+
                 <div>
-                    <h3 style="margin-bottom: 15px; color: var(--brand-red);">Upcoming Events</h3>
-                    <div id="club-upcoming-container" style="display: flex; flex-direction: column; gap: 15px;"></div>
+                    <h3 style="margin-bottom: 15px; color: var(--brand-red);">
+                        Upcoming Events
+                    </h3>
+
+                    <div
+                        id="club-upcoming-container"
+                        style="display: flex; flex-direction: column; gap: 15px;"
+                    ></div>
                 </div>
+
                 <div>
-                    <h3 style="margin-bottom: 15px;">Previous Events</h3>
-                    <div id="club-past-container" style="display: flex; flex-direction: column; gap: 15px;"></div>
+                    <h3 style="margin-bottom: 15px;">
+                        Previous Events
+                    </h3>
+
+                    <div
+                        id="club-past-container"
+                        style="display: flex; flex-direction: column; gap: 15px;"
+                    ></div>
                 </div>
+
             </div>
+
         </div>
 
         <div class="enroll-bar">
-            <button class="btn-primary" onclick="openModal('${club.id}', '${club.name}')">Enroll Now</button>
+
+            <button
+                class="btn-primary"
+                onclick="openModal('${club.id}', '${club.name}')"
+            >
+                Enroll Now
+            </button>
+
         </div>
     `;
 }
 
+
 function initAutoCarousel() {
     const track = document.getElementById('carouselTrack');
-    const indicatorsContainer = document.getElementById('carouselIndicators');
+    const indicatorsContainer =
+        document.getElementById('carouselIndicators');
+
     if (!track || !indicatorsContainer) return;
 
-    const slides = track.querySelectorAll('.carousel-slide');
-    const dots = indicatorsContainer.querySelectorAll('.carousel-dot');
+    const slides =
+        track.querySelectorAll('.carousel-slide');
+
+    const dots =
+        indicatorsContainer.querySelectorAll('.carousel-dot');
+
     if (slides.length <= 1) return;
 
     let currentSlide = 0;
 
     function updateCarousel(index) {
         currentSlide = index;
-        
-        // This targets ONLY the horizontal scroll of the track, preventing page jumps
+
+        // This targets ONLY the horizontal scroll of the track,
+        // preventing page jumps
         track.scrollTo({
             left: slides[currentSlide].offsetLeft,
             behavior: 'smooth'
@@ -201,227 +275,585 @@ function initAutoCarousel() {
 
     dots.forEach((dot, idx) => {
         dot.onclick = () => {
-            if (carouselInterval) clearInterval(carouselInterval);
+            if (carouselInterval) {
+                clearInterval(carouselInterval);
+            }
+
             updateCarousel(idx);
-            initAutoCarousel(); 
+            initAutoCarousel();
         };
     });
 
-    if (carouselInterval) clearInterval(carouselInterval);
+    if (carouselInterval) {
+        clearInterval(carouselInterval);
+    }
 
     carouselInterval = setInterval(() => {
-        currentSlide = (currentSlide + 1) % slides.length;
+        currentSlide =
+            (currentSlide + 1) % slides.length;
+
         updateCarousel(currentSlide);
-    }, 4000); 
+    }, 4000);
 }
+
 
 function createClubEventCard(event, index) {
     const card = document.createElement('div');
-    card.className = 'event-card scroll-reveal';
-    card.style.transitionDelay = `${index * 0.08}s`;
 
-    const statusClass = event.status ? event.status.toLowerCase() : 'upcoming';
+    card.className =
+        'event-card scroll-reveal';
+
+    card.style.transitionDelay =
+        `${index * 0.08}s`;
+
+    const statusClass =
+        event.status
+            ? event.status.toLowerCase()
+            : 'upcoming';
 
     card.innerHTML = `
         <div class="card-inner">
+
             <div class="card-header-row">
-                <span class="club-tag">${event.clubName}</span>
-                <span class="status-badge ${statusClass}">${event.status || 'Upcoming'}</span>
+
+                <span class="club-tag">
+                    ${event.clubName}
+                </span>
+
+                <span class="status-badge ${statusClass}">
+                    ${event.status || 'Upcoming'}
+                </span>
+
             </div>
-            
-            <h3>${event.eventName}</h3>
-            
+
+            <h3>
+                ${event.eventName}
+            </h3>
+
             <div class="event-meta">
-                <span class="icon">🕒</span> ${event.date} @ ${event.time}
+                <span class="icon">🕒</span>
+                ${event.date} @ ${event.time}
             </div>
+
             <div class="event-meta">
-                <span class="icon">📍</span> ${event.venue}
+                <span class="icon">📍</span>
+                ${event.venue}
             </div>
-            
+
             <div class="card-footer">
-                <span>Read full details</span>
-                <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+
+                <span>
+                    Read full details
+                </span>
+
+                <svg
+                    class="arrow"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+
             </div>
+
         </div>
     `;
 
-    card.onclick = () => openEventModal(event);
+    card.onclick = () =>
+        openEventModal(event);
+
     return card;
 }
 
+
 function updateEventBatches() {
-    const upcomingContainer = document.getElementById('club-upcoming-container');
-    const pastContainer = document.getElementById('club-past-container');
-    
-    if (!upcomingContainer || !pastContainer) return;
+    const upcomingContainer =
+        document.getElementById(
+            'club-upcoming-container'
+        );
+
+    const pastContainer =
+        document.getElementById(
+            'club-past-container'
+        );
+
+    if (!upcomingContainer || !pastContainer) {
+        return;
+    }
 
     upcomingContainer.innerHTML = "";
     pastContainer.innerHTML = "";
 
     if (globalUpcoming.length > 0) {
-        for (let i = 0; i < Math.min(eventsPerPage, globalUpcoming.length); i++) {
-            const ev = globalUpcoming[(upcomingIndex + i) % globalUpcoming.length];
-            upcomingContainer.appendChild(createClubEventCard(ev, i));
+
+        for (
+            let i = 0;
+            i < Math.min(
+                eventsPerPage,
+                globalUpcoming.length
+            );
+            i++
+        ) {
+
+            const ev =
+                globalUpcoming[
+                    (upcomingIndex + i) %
+                    globalUpcoming.length
+                ];
+
+            upcomingContainer.appendChild(
+                createClubEventCard(ev, i)
+            );
         }
+
     } else {
-        upcomingContainer.innerHTML = '<p style="color:var(--text-muted); font-size:14px;">No upcoming events currently scheduled.</p>';
+
+        upcomingContainer.innerHTML =
+            '<p style="color:var(--text-muted); font-size:14px;">No upcoming events currently scheduled.</p>';
     }
+
 
     if (globalPast.length > 0) {
-        for (let i = 0; i < Math.min(eventsPerPage, globalPast.length); i++) {
-            const ev = globalPast[(pastIndex + i) % globalPast.length];
-            pastContainer.appendChild(createClubEventCard(ev, i));
+
+        for (
+            let i = 0;
+            i < Math.min(
+                eventsPerPage,
+                globalPast.length
+            );
+            i++
+        ) {
+
+            const ev =
+                globalPast[
+                    (pastIndex + i) %
+                    globalPast.length
+                ];
+
+            pastContainer.appendChild(
+                createClubEventCard(ev, i)
+            );
         }
+
     } else {
-        pastContainer.innerHTML = '<p style="color:var(--text-muted); font-size:14px;">No past events recorded.</p>';
+
+        pastContainer.innerHTML =
+            '<p style="color:var(--text-muted); font-size:14px;">No past events recorded.</p>';
     }
 
+
     setTimeout(() => {
-        document.querySelectorAll('.club-details-container .scroll-reveal').forEach(el => el.classList.add('visible'));
+
+        document
+            .querySelectorAll(
+                '.club-details-container .scroll-reveal'
+            )
+            .forEach(
+                el => el.classList.add('visible')
+            );
+
     }, 50);
 }
 
+
 function rotateClubEvents() {
-    const cards = document.querySelectorAll('.club-details-container .event-card');
-    
+
+    const cards =
+        document.querySelectorAll(
+            '.club-details-container .event-card'
+        );
+
     cards.forEach(card => {
+
         card.classList.remove('visible');
         card.classList.add('fade-out');
+
     });
 
+
     setTimeout(() => {
+
         if (globalUpcoming.length > eventsPerPage) {
-            upcomingIndex = (upcomingIndex + eventsPerPage) % globalUpcoming.length;
+
+            upcomingIndex =
+                (upcomingIndex + eventsPerPage) %
+                globalUpcoming.length;
         }
+
+
         if (globalPast.length > eventsPerPage) {
-            pastIndex = (pastIndex + eventsPerPage) % globalPast.length;
+
+            pastIndex =
+                (pastIndex + eventsPerPage) %
+                globalPast.length;
         }
+
+
         updateEventBatches();
+
     }, 400);
 }
 
+
 function openEventModal(event) {
-    let modalOverlay = document.getElementById('eventModal');
+
+    let modalOverlay =
+        document.getElementById('eventModal');
+
+
     if (!modalOverlay) {
-        modalOverlay = document.createElement('div');
-        modalOverlay.id = 'eventModal';
-        modalOverlay.className = 'modal-overlay';
+
+        modalOverlay =
+            document.createElement('div');
+
+        modalOverlay.id =
+            'eventModal';
+
+        modalOverlay.className =
+            'modal-overlay';
+
+
         modalOverlay.innerHTML = `
             <div class="modal-content">
-                <button class="close-modal" onclick="closeEventModal()">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+
+                <button
+                    class="close-modal"
+                    onclick="closeEventModal()"
+                >
+                    <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path d="M18 6L6 18M6 6l12 12"></path>
+                    </svg>
                 </button>
+
                 <div class="modal-header-accent"></div>
+
                 <h2 id="modalTitle"></h2>
-                <div class="modal-meta" id="modalDetails"></div>
+
+                <div
+                    class="modal-meta"
+                    id="modalDetails"
+                ></div>
+
                 <div class="modal-body-scroll">
+
                     <p id="modalDescription"></p>
+
                 </div>
+
             </div>
         `;
-        document.body.appendChild(modalOverlay);
-        
+
+
+        document.body.appendChild(
+            modalOverlay
+        );
+
+
         modalOverlay.onclick = (e) => {
-            if (e.target === modalOverlay) closeEventModal();
+
+            if (e.target === modalOverlay) {
+                closeEventModal();
+            }
+
         };
     }
 
-    document.getElementById('modalTitle').textContent = event.eventName;
-    document.getElementById('modalDetails').innerHTML = `
-        <strong>${event.clubName}</strong> &nbsp;|&nbsp; 
-        <span style="color: ${event.status === 'Upcoming' ? '#166534' : '#4b5563'};">${event.status || 'Event'}</span> <br><br>
-        🕒 ${event.date} • ${event.time} <br> 📍 ${event.venue}
+
+    document.getElementById(
+        'modalTitle'
+    ).textContent =
+        event.eventName;
+
+
+    document.getElementById(
+        'modalDetails'
+    ).innerHTML = `
+
+        <strong>
+            ${event.clubName}
+        </strong>
+
+        &nbsp;|&nbsp;
+
+        <span
+            style="color: ${
+                event.status === 'Upcoming'
+                    ? '#166534'
+                    : '#4b5563'
+            };"
+        >
+            ${event.status || 'Event'}
+        </span>
+
+        <br><br>
+
+        🕒 ${event.date} • ${event.time}
+
+        <br>
+
+        📍 ${event.venue}
     `;
-    document.getElementById('modalDescription').textContent = event.description;
-    
-    modalOverlay.classList.add('show');
-    document.body.style.overflow = 'hidden';
+
+
+    document.getElementById(
+        'modalDescription'
+    ).textContent =
+        event.description;
+
+
+    modalOverlay.classList.add(
+        'show'
+    );
+
+    document.body.style.overflow =
+        'hidden';
 }
 
+
 function closeEventModal() {
-    const modal = document.getElementById('eventModal');
+
+    const modal =
+        document.getElementById(
+            'eventModal'
+        );
+
+
     if (modal) {
-        modal.classList.remove('show');
-        document.body.style.overflow = '';
+
+        modal.classList.remove(
+            'show'
+        );
+
+        document.body.style.overflow =
+            '';
     }
 }
+
 
 function openModal(clubId, clubName) {
     const modal = document.getElementById('enroll-modal');
+
     document.getElementById('enroll-club-id').value = clubId;
     document.getElementById('modal-club-name-display').innerText = clubName;
-    modal.style.display = 'block';
+
+    modal.style.display = 'flex';
 }
+
 
 function closeModal() {
-    document.getElementById('enroll-modal').style.display = 'none';
+
+    document.getElementById(
+        'enroll-modal'
+    ).style.display =
+        'none';
 }
+
 
 async function submitForm(event) {
+
     event.preventDefault();
-    
-    const submitBtn = event.target.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerText;
-    submitBtn.innerText = "Sending Request...";
-    submitBtn.disabled = true;
+
+
+    const submitBtn =
+        event.target.querySelector(
+            'button[type="submit"]'
+        );
+
+
+    const originalText =
+        submitBtn.innerText;
+
+
+    submitBtn.innerText =
+        "Sending Request...";
+
+
+    submitBtn.disabled =
+        true;
+
 
     try {
-        const clubId = document.getElementById('enroll-club-id').value;
-        const clubName = document.getElementById('modal-club-name-display').innerText;
-        const studentName = document.getElementById('student-name').value;
-        const studentEmail = document.getElementById('student-email').value;
-        const studentDept = document.getElementById('student-dept').value;
-        
+
+        const clubId =
+            document.getElementById(
+                'enroll-club-id'
+            ).value;
+
+
+        const clubName =
+            document.getElementById(
+                'modal-club-name-display'
+            ).innerText;
+
+
+        const studentName =
+            document.getElementById(
+                'student-name'
+            ).value.trim();
+
+
+        const studentEmail =
+            document.getElementById(
+                'student-email'
+            ).value.trim();
+
+
+        const studentDept =
+            document.getElementById(
+                'student-dept'
+            ).value.trim();
+
+
+        // NEW:
+        // Reason for joining the club
+        const joinReason =
+            document.getElementById(
+                'join-reason'
+            ).value.trim();
+
+
+        // NEW:
+        // Student's experience in the field
+        const fieldExperience =
+            document.getElementById(
+                'field-experience'
+            ).value.trim();
+
+
         const enrollmentRequest = {
-            clubId: clubId,
-            clubName: clubName,
-            studentName: studentName,
-            studentEmail: studentEmail,
-            studentDepartment: studentDept,
-            status: "Pending",
-            timestamp: new Date().toISOString()
+
+            clubId:
+                clubId,
+
+            clubName:
+                clubName,
+
+            studentName:
+                studentName,
+
+            studentEmail:
+                studentEmail,
+
+            studentDepartment:
+                studentDept,
+
+            // NEW FIELDS
+            joinReason:
+                joinReason,
+
+            fieldExperience:
+                fieldExperience,
+
+            status:
+                "Pending",
+
+            timestamp:
+                new Date().toISOString()
         };
 
-        // Writes directly to your new "requests" collection
-        await addDoc(collection(db, "requests"), enrollmentRequest);
-        
+
+        // Writes directly to the "requests" collection
+        await addDoc(
+            collection(db, "requests"),
+            enrollmentRequest
+        );
+
+
         // Close the form and clear it
         closeModal();
+
         event.target.reset();
-        
-        // Trigger the new Success Modal instead of the alert
-        document.getElementById('success-modal').style.display = 'block';
+
+
+        // Trigger the Success Modal
+        document.getElementById(
+            'success-modal'
+        ).style.display =
+            'block';
+
 
     } catch (error) {
-        console.error("Error submitting enrollment: ", error);
-        alert("Failed to send request. Please check your connection and try again.");
+
+        console.error(
+            "Error submitting enrollment: ",
+            error
+        );
+
+
+        alert(
+            "Failed to send request. Please check your connection and try again."
+        );
+
+
     } finally {
-        submitBtn.innerText = originalText;
-        submitBtn.disabled = false;
+
+        submitBtn.innerText =
+            originalText;
+
+        submitBtn.disabled =
+            false;
     }
 }
+
 
 // Function to close the success modal
 function closeSuccessModal() {
-    document.getElementById('success-modal').style.display = 'none';
+
+    document.getElementById(
+        'success-modal'
+    ).style.display =
+        'none';
 }
 
+
 // Attach these to the global window object
-window.openModal = openModal;
-window.closeModal = closeModal;
-window.submitForm = submitForm;
-window.closeEventModal = closeEventModal;
-window.closeSuccessModal = closeSuccessModal; 
+window.openModal =
+    openModal;
+
+window.closeModal =
+    closeModal;
+
+window.submitForm =
+    submitForm;
+
+window.closeEventModal =
+    closeEventModal;
+
+window.closeSuccessModal =
+    closeSuccessModal;
+
 
 // Ensure clicking the background closes whichever modal is open
 window.onclick = function(event) {
-    const enrollModal = document.getElementById('enroll-modal');
-    const successModal = document.getElementById('success-modal');
-    
+
+    const enrollModal =
+        document.getElementById(
+            'enroll-modal'
+        );
+
+    const successModal =
+        document.getElementById(
+            'success-modal'
+        );
+
+
     if (event.target === enrollModal) {
         closeModal();
     }
+
+
     if (event.target === successModal) {
         closeSuccessModal();
     }
-}
+};
