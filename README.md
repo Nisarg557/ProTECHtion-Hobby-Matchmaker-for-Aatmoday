@@ -36,6 +36,8 @@ The frontend contains the HTML, CSS and JavaScript files for the Aatmoday interf
 
 The Node.js backend is responsible for securely communicating with the Groq API.
 
+here we have given an example API for security purpose. You can implement your own API key by creating an .env file or else just pasting your API key inside the .env.example file.
+
 ## Setup
 
 ### 1. Clone the repository
