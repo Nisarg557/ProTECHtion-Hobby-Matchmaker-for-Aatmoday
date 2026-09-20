@@ -45,7 +45,6 @@ body {
 }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 
-/* --- Directory Layout --- */
 .directory-header {
     text-align: center; padding: 60px 20px 40px; max-width: 800px; margin: 0 auto;
 }
@@ -63,7 +62,7 @@ body {
     gap: 24px;
 }
 
-/* --- Club Cards --- */
+
 .club-card {
     background: var(--card-bg); border-radius: 16px; padding: 30px;
     border: 1px solid var(--border-soft); display: flex; flex-direction: column;
