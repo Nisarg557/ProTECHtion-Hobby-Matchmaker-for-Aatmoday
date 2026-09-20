@@ -1,0 +1,170 @@
+[
+    {
+        "id": "photography",
+        "name": "Photography Club",
+        "icon": "📷",
+        "description": "Capture moments, tell stories and explore the world through your lens. A strong fit for students interested in photography and creative visual work.",
+        "about": "The Photography Club is a community of visual storytellers. Whether you are a beginner with a smartphone or an expert with a DSLR, join us to learn framing, lighting, and editing techniques.",
+        "activities": ["Weekly Photo Walks", "Portrait & Landscape Workshops", "Photo Editing Sessions", "Annual Exhibition"],
+        "executives": [{"name": "Arjun Patel", "designation": "President", "department": "B.Tech CSE", "contact": "+91 98765 43210"}],
+        "images": [
+            "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1500634245200-e524fc67504e?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1452587925148-ce544e77270d?auto=format&fit=crop&w=1000&q=80"
+        ]
+    },
+    {
+        "id": "coding",
+        "name": "Coding & Robotics",
+        "icon": "🤖",
+        "description": "A strong fit for students interested in coding, technology, robotics, artificial intelligence and technical projects.",
+        "about": "Dive into the world of tech with the Coding & Robotics club. We host hackathons, build hardware prototypes, and explore the cutting edge of AI and software development.",
+        "activities": ["Hackathons & Coding Competitions", "Arduino & Raspberry Pi Workshops", "Open Source Contribution Drives", "Tech Talks with Industry Experts"],
+        "executives": [{"name": "Priya Sharma", "designation": "Lead Coordinator", "department": "B.Tech IT", "contact": "+91 91234 56789"}],
+        "images": [
+            "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1000&q=80"
+        ]
+    },
+    {
+        "id": "cultural",
+        "name": "Cultural Club",
+        "icon": "🎭",
+        "description": "Explore cultural activities, performances, music, dance and celebrations while connecting with other students.",
+        "about": "The Cultural Club is the heartbeat of campus life. We celebrate diversity through music, dance, theater, and grand festivals. Join us to showcase your talent, learn about different traditions, and make memories that last a lifetime.",
+        "activities": ["Annual Cultural Fest", "Dance & Music Workshops", "Theater Productions", "Festival Celebrations"],
+        "executives": [{"name": "Aisha Khan", "designation": "Cultural Secretary", "department": "B.A. Humanities", "contact": "+91 98765 11223"}],
+        "images": [
+            "https://images.unsplash.com/photo-1469488865564-c2de10f69f96?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=1000&q=80"
+        ]
+    },
+    {
+        "id": "literary",
+        "name": "Literary Club",
+        "icon": "📚",
+        "description": "A space for students interested in reading, writing, poetry, storytelling, literature and discussions.",
+        "about": "Whether you are a voracious reader, a budding poet, or a passionate debater, the Literary Club is your haven. We host open mics, book club discussions, and inter-college debate tournaments to hone your communication and creative skills.",
+        "activities": ["Slam Poetry Nights", "Debate & Elocution", "Book Exchange Drives", "Creative Writing Workshops"],
+        "executives": [{"name": "Rohan Desai", "designation": "President", "department": "B.A. English", "contact": "+91 98111 22334"}],
+        "images": [
+            "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1000&q=80"
+        ]
+    },
+    {
+        "id": "fitness",
+        "name": "Fitness Club",
+        "icon": "💪",
+        "description": "A good fit for students interested in fitness, physical activities, sports, yoga and staying active.",
+        "about": "We believe in a healthy mind and a healthy body. The Fitness Club organizes group workouts, yoga retreats, and marathon training. Whether you're a seasoned athlete or just starting your fitness journey, there is a place for you here.",
+        "activities": ["Morning Yoga Sessions", "HIIT Workouts", "Marathon Training", "Nutrition Seminars"],
+        "executives": [{"name": "Vikram Singh", "designation": "Fitness Captain", "department": "B.Sc Sports Science", "contact": "+91 99887 76655"}],
+        "images": [
+            "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1000&q=80"
+        ]
+    },
+    {
+        "id": "cooking",
+        "name": "Cooking Club",
+        "icon": "👨‍🍳",
+        "description": "Explore cooking, recipes, food and culinary creativity while participating in hands-on activities.",
+        "about": "From mastering the basics of baking to exploring international cuisines, the Cooking Club brings food lovers together. We host bake sales, cooking competitions, and masterclasses to help you unleash your inner chef.",
+        "activities": ["Flameless Cooking Events", "Bake Sales", "Global Cuisine Workshops", "Masterchef Competitions"],
+        "executives": [{"name": "Meera Reddy", "designation": "Head Chef", "department": "BHM Culinary Arts", "contact": "+91 91222 33445"}],
+        "images": [
+            "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1507048331197-7d4af7604316?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1466637574441-749b8f19451f?auto=format&fit=crop&w=1000&q=80"
+        ]
+    },
+    {
+        "id": "gardening",
+        "name": "Gardening Club",
+        "icon": "🌱",
+        "description": "A good fit for students interested in plants, gardening, nature, environmental activities and sustainability.",
+        "about": "Join us in making our campus greener. The Gardening Club is dedicated to sustainability, urban farming, and botanical care. Learn how to grow your own food, care for houseplants, and participate in campus beautification drives.",
+        "activities": ["Campus Plantation Drives", "Composting Workshops", "Terrarium Making", "Urban Farming Seminars"],
+        "executives": [{"name": "Siddharth Joshi", "designation": "Green Coordinator", "department": "B.Sc Botany", "contact": "+91 98777 66554"}],
+        "images": [
+            "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1000&q=80"
+        ]
+    },
+    {
+        "id": "music",
+        "name": "Music & Acoustics Club",
+        "icon": "🎸",
+        "description": "A community for musicians, vocalists, and audio enthusiasts to jam, perform, and learn.",
+        "about": "Whether you're a classically trained pianist or a shower singer, the Music Club provides a stage for everyone. We host weekly jam sessions, vocal training workshops, and campus-wide concerts.",
+        "activities": ["Weekly Jam Sessions", "Vocal & Instrument Workshops", "Open Mic Nights", "Battle of the Bands"],
+        "executives": [{"name": "Kabir Sen", "designation": "Music Director", "department": "B.A. Sound Engineering", "contact": "+91 91122 33445"}],
+        "images": [
+            "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1000&q=80"
+        ]
+    },
+    {
+        "id": "art",
+        "name": "Art & Design Club",
+        "icon": "🎨",
+        "description": "Express yourself through digital and physical mediums in our collaborative art studio.",
+        "about": "The Art & Design club is a sanctuary for creators. We explore everything from traditional canvas painting and sketching to modern UI/UX design and digital illustration.",
+        "activities": ["Canvas Painting Workshops", "Digital Illustration Seminars", "Campus Mural Projects", "Designathons"],
+        "executives": [{"name": "Sneha Gupta", "designation": "Creative Head", "department": "B.Des Graphic Design", "contact": "+91 99888 77665"}],
+        "images": [
+            "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1000&q=80"
+        ]
+    },
+    {
+        "id": "astronomy",
+        "name": "Astronomy & Space Club",
+        "icon": "🔭",
+        "description": "Explore the cosmos, learn about astrophysics, and participate in night-sky observation events.",
+        "about": "Look up! The Astronomy Club brings space enthusiasts together to observe celestial events, discuss astrophysics, and learn astrophotography. We organize regular telescope viewings and planetarium visits.",
+        "activities": ["Stargazing Sessions", "Astrophotography Workshops", "Astrophysics Guest Lectures", "Planetarium Trips"],
+        "executives": [{"name": "Rahul Verma", "designation": "Observation Lead", "department": "B.Sc Physics", "contact": "+91 98765 00000"}],
+        "images": [
+            "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&w=1000&q=80"
+        ]
+    },
+    {
+        "id": "cinema",
+        "name": "Film & Cinema Club",
+        "icon": "🎬",
+        "description": "Watch, discuss, and create films with fellow cinema enthusiasts and aspiring filmmakers.",
+        "about": "The Film & Cinema Club is for anyone who loves the magic of movies. We host weekly screenings, breakdown cinematography techniques, and produce our own short films. Whether you want to direct, act, or just watch, grab some popcorn and join us.",
+        "activities": ["Weekly Movie Screenings", "Short Film Production", "Screenwriting Workshops", "Film Festival Trips"],
+        "executives": [{"name": "Ananya Desai", "designation": "Director", "department": "B.A. Mass Media", "contact": "+91 90000 11111"}],
+        "images": [
+            "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1000&q=80"
+        ]
+    },
+    {
+        "id": "business",
+        "name": "Entrepreneurship Club",
+        "icon": "💡",
+        "description": "Develop your business acumen, pitch startup ideas, and network with driven student entrepreneurs.",
+        "about": "Got a great idea? The Entrepreneurship Club helps turn concepts into reality. We connect students with mentors, host pitch competitions, and break down the basics of business strategy, marketing, and venture funding.",
+        "activities": ["Startup Pitch Competitions", "Founder Guest Lectures", "Networking Mixers", "Business Case Studies"],
+        "executives": [{"name": "Karan Mehta", "designation": "President", "department": "BBA Finance", "contact": "+91 92222 33333"}],
+        "images": [
+            "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=80"
+        ]
+    }
+]
